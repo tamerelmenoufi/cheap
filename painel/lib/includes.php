@@ -13,7 +13,7 @@
 
     include("dicionary_".(($_SESSION['lng'])?$_SESSION['lng']:'en').".php");
 
-    $localPainel = $_SERVER["REQUEST_SCHEME"]."://cheap.mohatron.com/";
+    $localPainel = $_SERVER["REQUEST_SCHEME"]."://cheappanel.mohatron.com/";
     $localSite = $_SERVER["REQUEST_SCHEME"]."://cheap.mohatron.com/";
 
     if($_GET['ln']){
