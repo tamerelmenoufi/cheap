@@ -3,7 +3,7 @@
 
     // include("connect_local.php");
 
-    include("/sisBuscainc/connect.php");
+    include("/sisBuscasinc/connect.php");
     $con = AppConnect('app');
 
     // include("/appinc/connect.php");
