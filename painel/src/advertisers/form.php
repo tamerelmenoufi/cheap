@@ -87,8 +87,8 @@
                     <input type="text" class="form-control" id="name" name="name" placeholder="<?=$Dic['Full Name']?>" value="<?=$d->name?>">
                     <label for="nome"><?=$Dic['Name']?>*</label>
                 </div>
-                <div showImage class="form-floating" style="display:<?=(($d->imagem)?'block':'none')?>">
-                    <img src="<?=$localPainel?>src/volume/advertisers/<?=$d->imagem?>" class="img-fluid mt-3 mb-3" alt="" />
+                <div showImage class="form-floating" style="display:<?=(($d->image)?'block':'none')?>">
+                    <img src="<?=$localPainel?>src/volume/advertisers/<?=$d->image?>" class="img-fluid mt-3 mb-3" alt="" />
                 </div>
                     <!-- <div class="form-floating"> -->
                     <input type="file" class="form-control" placeholder="Icon">
