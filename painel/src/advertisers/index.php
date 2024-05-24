@@ -65,7 +65,7 @@
                   <td>
 
                   <div class="form-check form-switch">
-                    <input class="form-check-input status" type="checkbox" <?=(($d->id == 1)?'disabled':false)?> <?=(($d->status)?'checked':false)?> user="<?=$d->id?>">
+                    <input class="form-check-input status" type="checkbox" <?=(($d->status)?'checked':false)?> user="<?=$d->id?>">
                   </div>
 
                   </td>
