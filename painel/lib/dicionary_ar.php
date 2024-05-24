@@ -157,5 +157,6 @@
         'Segment Registration' => 'تسجيل القسم',
         'Customers' => 'عملاء',
         'Custmer List' => 'قائمة العملاء',
+        'Advertisers' => 'المعلنين',
         '' => '',
     ];
