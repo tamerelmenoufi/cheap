@@ -46,7 +46,6 @@
                   <th scope="col"><?=$Dic['Name']?></th>
                   <th scope="col"><?=$Dic['Phone']?></th>
                   <th scope="col"><?=$Dic['E-mail']?></th>
-                  <th scope="col"><?=$Dic['Status']?></th>
                   <th scope="col" class="text-end"><?=$Dic['Actions']?></th>
                 </tr>
               </thead>
@@ -60,13 +59,6 @@
                   <td><?=$d->name?></td>
                   <td><?=$d->phone?></td>
                   <td><?=$d->email?></td>
-                  <td>
-
-                  <div class="form-check form-switch">
-                    <input class="form-check-input status" type="checkbox" <?=(($d->id == 1)?'disabled':false)?> <?=(($d->status)?'checked':false)?> user="<?=$d->id?>">
-                  </div>
-
-                  </td>
                   <td class="text-end">
                     <button
                       class="btn btn-primary"
@@ -79,15 +71,9 @@
                     >
                     <?=$Dic['Edit']?>
                     </button>
-                    <?php
-                    if($d->id != 1){
-                    ?>
                     <button class="btn btn-danger" delete="<?=$d->id?>">
                     <?=$Dic['Delete']?>
                     </button>
-                    <?php
-                    }
-                    ?>
                   </td>
                 </tr>
                 <?php
