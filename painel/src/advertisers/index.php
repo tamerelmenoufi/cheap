@@ -2,6 +2,7 @@
         include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
 
     if($_POST['delete']){
+      if($_POST['image']) unlink("../volume/advertisers/{$_POST['image']}");
       $query = "delete from advertisers where id = '{$_POST['delete']}'";
       mysqli_query($con, $query);
     }
@@ -81,7 +82,7 @@
                     >
                     <?=$Dic['Edit']?>
                     </button>
-                    <button class="btn btn-danger" delete="<?=$d->id?>">
+                    <button class="btn btn-danger" delete="<?=$d->id?>" image="<?=$d->image?>">
                     <?=$Dic['Delete']?>
                     </button>
                   </td>
@@ -129,6 +130,7 @@
 
         $("button[delete]").click(function(){
             del = $(this).attr("delete");
+            image = $(this).attr("image");
             $.confirm({
                 content:"<?=$Dic['Do you really want to delete the record?']?>",
                 title:false,
@@ -138,7 +140,8 @@
                             url:"src/advertisers/index.php",
                             type:"POST",
                             data:{
-                                delete:del
+                                delete:del,
+                                image
                             },
                             success:function(dados){
                               // $.alert(dados);
