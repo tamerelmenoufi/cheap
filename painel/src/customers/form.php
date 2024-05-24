@@ -62,20 +62,6 @@
                     <label for="nome"><?=$Dic['Name']?>*</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <select name="segment" class="form-control" id="segment">
-                        <?php
-                        $q = "select * from segments where status = '1' order by segment";
-                        $r = mysqli_query($con, $q);
-                        while($s = mysqli_fetch_object($r)){
-                        ?>
-                        <option value="<?=$s->id?>" <?=(($d->segment == $s->id)?'selected':false)?>><?=$s->segment?></option>
-                        <?php
-                        }
-                        ?>
-                    </select>
-                    <label for="segment"><?=$Dic['Segment']?></label>
-                </div>
-                <div class="form-floating mb-3">
                     <input type="text" name="phone" id="phone" class="form-control" placeholder="<?=$Dic['Phone']?>" value="<?=$d->phone?>">
                     <label for="telefone"><?=$Dic['Phone']?>*</label>
                 </div>
