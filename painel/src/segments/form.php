@@ -55,8 +55,8 @@
         <div class="row">
             <div class="col">
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="category" name="category" placeholder="Category" value="<?=$d->category?>">
-                    <label for="nome"><?=$Dic['Category']?>*</label>
+                    <input type="text" class="form-control" id="segment" name="segment" placeholder="segment" value="<?=$d->segment?>">
+                    <label for="nome"><?=$Dic['Segment']?>*</label>
                 </div>
                 <div class="form-floating mb-3">
                     <select name="status" class="form-control" id="status">
