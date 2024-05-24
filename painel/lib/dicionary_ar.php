@@ -155,5 +155,6 @@
         'Segment' => 'قسم',
         'Segments List' => 'قائمة الأقسام',
         'Segment Registration' => 'تسجيل القسم',
+        'Customers' => 'عملاء',
         '' => '',
     ];

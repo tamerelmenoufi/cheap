@@ -155,6 +155,7 @@
         'Segment' => 'Segment',
         'Segments List' => 'Segment List',
         'Segment Registration' => 'Segment Registration',
+        'Customers' => 'Customers',
         '' => '',
 
     ];

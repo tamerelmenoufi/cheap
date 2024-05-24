@@ -81,6 +81,13 @@
 
     <div class="row mb-1 menu-cinza">
       <div class="col">
+        <a url="src/customers/index.php" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
+         <i class="fa-solid fa-users"></i> <?=$Dic['Customers']?>
+        </a>
+      </div>
+    </div>
+    <div class="row mb-1 menu-cinza">
+      <div class="col">
         <a url="src/users/index.php" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
          <i class="fa-solid fa-users"></i> <?=$Dic['System Users']?>
         </a>
