@@ -156,6 +156,61 @@
             $("#phone").mask("299999999999");
 
 
+            if (window.File && window.FileList && window.FileReader) {
+
+                $('input[type="file"]').change(function () {
+
+                    if ($(this).val()) {
+                        var files = $(this).prop("files");
+                        for (var i = 0; i < files.length; i++) {
+                            (function (file) {
+                                var fileReader = new FileReader();
+                                fileReader.onload = function (f) {
+
+                                    var img = new Image();
+                                    img.src = f.target.result;
+                                    img.onload = function () {
+                                        // CREATE A CANVAS ELEMENT AND ASSIGN THE IMAGES TO IT.
+                                        var canvas = document.createElement("canvas");
+                                        var value = 50;
+                                        // RESIZE THE IMAGES ONE BY ONE.
+                                        w = img.width;
+                                        h = img.height;
+                                        if(w > 800){
+                                            img.width = 800 //(800 * 100)/img.width // (img.width * value) / 100
+                                            img.height = (800 * h / w) //(img.height/100)*img.width // (img.height * value) / 100
+                                        }
+                                        var ctx = canvas.getContext("2d");
+                                        ctx.clearRect(0, 0, canvas.width, canvas.height);
+                                        canvas.width = img.width;
+                                        canvas.height = img.height;
+                                        ctx.drawImage(img, 0, 0, img.width, img.height);
+
+                                        var base64 = canvas.toDataURL(file.type); //f.target.result;
+                                        var type = file.type;
+                                        var name = file.name;
+                                        if(bases64 && type && name){
+
+                                            $("#base64").val(base64);
+                                            $("#image_type").val(type);
+                                            $("#image_name").val(name);
+
+                                            $("div[showImage] img").attr("src",base64);
+                                            $("div[showImage]").css("display",'block');
+                                        }
+
+                                    }
+                                };
+                                fileReader.readAsDataURL(file);
+                            })(files[i]);
+                        }
+                }
+                });
+            } else {
+                alert('Nao suporta HTML5');
+            }
+
+
             $('#form-<?=$md5?>').submit(function (e) {
 
                 e.preventDefault();
@@ -171,60 +226,6 @@
 
                 Carregando();
 
-
-                if (window.File && window.FileList && window.FileReader) {
-
-                    $('input[type="file"]').change(function () {
-
-                        if ($(this).val()) {
-                            var files = $(this).prop("files");
-                            for (var i = 0; i < files.length; i++) {
-                                (function (file) {
-                                    var fileReader = new FileReader();
-                                    fileReader.onload = function (f) {
-
-                                        var img = new Image();
-                                        img.src = f.target.result;
-                                        img.onload = function () {
-                                            // CREATE A CANVAS ELEMENT AND ASSIGN THE IMAGES TO IT.
-                                            var canvas = document.createElement("canvas");
-                                            var value = 50;
-                                            // RESIZE THE IMAGES ONE BY ONE.
-                                            w = img.width;
-                                            h = img.height;
-                                            if(w > 800){
-                                                img.width = 800 //(800 * 100)/img.width // (img.width * value) / 100
-                                                img.height = (800 * h / w) //(img.height/100)*img.width // (img.height * value) / 100
-                                            }
-                                            var ctx = canvas.getContext("2d");
-                                            ctx.clearRect(0, 0, canvas.width, canvas.height);
-                                            canvas.width = img.width;
-                                            canvas.height = img.height;
-                                            ctx.drawImage(img, 0, 0, img.width, img.height);
-
-                                            var base64 = canvas.toDataURL(file.type); //f.target.result;
-                                            var type = file.type;
-                                            var name = file.name;
-                                            if(bases64 && type && name){
-
-                                                $("#base64").val(base64);
-                                                $("#image_type").val(type);
-                                                $("#image_name").val(name);
-
-                                                $("div[showImage] img").attr("src",base64);
-                                                $("div[showImage]").css("display",'block');
-                                            }
-
-                                        }
-                                    };
-                                    fileReader.readAsDataURL(file);
-                                })(files[i]);
-                            }
-                    }
-                    });
-                } else {
-                    alert('Nao suporta HTML5');
-                }
 
                 $.ajax({
                     url:"src/advertisers/form.php",
