@@ -90,11 +90,6 @@
                 </div>
 
                 <div class="form-floating mb-3">
-                    <input type="text" name="password" id="password" class="form-control" placeholder="Password" value="">
-                    <label for="password"><?=$Dic['Password']?></label>
-                </div>
-
-                <div class="form-floating mb-3">
                     <select name="status" class="form-control" id="status">
                         <option value="1" <?=(($d->status == '1')?'selected':false)?>><?=$Dic['Allowed']?></option>
                         <option value="0" <?=(($d->status == '0')?'selected':false)?>><?=$Dic['Blocked']?></option>
