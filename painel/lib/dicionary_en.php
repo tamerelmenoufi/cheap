@@ -151,6 +151,10 @@
         'Cancel' => 'Cancel',
         'Confirm your subscription?' => 'Confirm your subscription?',
         'Confirmed enrollment!' => 'Confirmed enrollment!',
+        'Segments' => 'Segments',
+        'Segment' => 'Segment',
+        'Segments List' => 'Segment List',
+        'Segment Registration' => 'Segment Registration',
         '' => '',
 
     ];

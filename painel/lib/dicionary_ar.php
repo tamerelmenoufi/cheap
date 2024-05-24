@@ -151,5 +151,9 @@
         'Cancel' => 'إلغاء الاشتراك',
         'Confirm your subscription?' => 'تأكيد اشتراكك؟',
         'Confirmed enrollment!' => 'تم تأكيد التسجيل!',
+        'Segments' => 'الأقسام',
+        'Segment' => 'قسم',
+        'Segments List' => 'قائمة الأقسام',
+        'Segment Registration' => 'تسجيل القسم',
         '' => '',
     ];
