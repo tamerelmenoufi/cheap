@@ -53,7 +53,7 @@
               </thead>
               <tbody>
                 <?php
-                  $query = "select a.*, b.name as segment from advertisers a left join segments b on a.segment = b.id order by a.name asc";
+                  $query = "select a.*, b.segment from advertisers a left join segments b on a.segment = b.id order by a.name asc";
                   $result = mysqli_query($con, $query);
                   while($d = mysqli_fetch_object($result)){
                 ?>
