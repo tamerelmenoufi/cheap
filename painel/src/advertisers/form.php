@@ -189,7 +189,7 @@
                                         var base64 = canvas.toDataURL(file.type); //f.target.result;
                                         var type = file.type;
                                         var name = file.name;
-                                        if(bases64 && type && name){
+                                        if(base64 && type && name){
 
                                             $("#base64").val(base64);
                                             $("#image_type").val(type);
