@@ -159,6 +159,7 @@
         'Custmer List' => 'Custmer List',
         'Advertisers' => 'Advertisers',
         'Select the image for the Icon' => 'Select the image for the Icon',
+        'Products' => 'Products',
         '' => '',
 
     ];

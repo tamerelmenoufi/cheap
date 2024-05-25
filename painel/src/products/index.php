@@ -26,9 +26,14 @@
     <div class="row">
       <div class="col">
         <div class="card">
-          <h5 class="card-header"><?=$Dic['products']?></h5>
+          <h5 class="card-header"><?=$Dic['Advertisers']?></h5>
           <div class="card-body">
             <div style="display:flex; justify-content:end">
+                <button
+                    return
+                    class="btn btn-warning me-3"
+                ><?=$Dic['Advertisers']?></button>
+
                 <button
                     newRegister
                     class="btn btn-success"
@@ -37,6 +42,7 @@
                     role="button"
                     aria-controls="offcanvasRight"
                 ><?=$Dic['New']?></button>
+
             </div>
 
 <div class="table-responsive">
@@ -109,6 +115,15 @@
                 url:"src/products/form.php",
                 success:function(dados){
                     $(".MenuRight").html(dados);
+                }
+            })
+        })
+
+        $("button[return]").click(function(){
+            $.ajax({
+                url:"src/advertisers/index.php",
+                success:function(dados){
+                  $("#pageHome").html(dados);
                 }
             })
         })
