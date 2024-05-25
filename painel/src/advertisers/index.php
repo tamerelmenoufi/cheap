@@ -71,11 +71,14 @@
 
                   </td>
 
-                  <button class="btn btn-danger" products="<?=$d->id?>">
-                    <?=$Dic['Products']?>
-                  </button>
 
                   <td class="text-end">
+
+
+                    <button class="btn btn-danger" products="<?=$d->id?>">
+                      <?=$Dic['Products']?>
+                    </button>
+
                     <button
                       class="btn btn-primary"
                       style="margin-bottom:1px"
