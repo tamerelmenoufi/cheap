@@ -84,11 +84,11 @@
                 <div id="divImages"></div>
 
                 <div class="form-floating mb-3">
-                    <input type="date" name="start_date" id="start_date" class="form-control" placeholder="<?=$Dic['Start Date']?>" value="<?=$d->start_date?>">
+                    <input type="date" name="start_date" id="start_date" class="form-control" placeholder="<?=$Dic['Start Date']?>" value="<?=dataBr($d->start_date)?>">
                     <label for="start_date"><?=$Dic['Start Date']?>*</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="date" name="end_date" id="end_date" class="form-control" placeholder="<?=$Dic['End Date']?>" value="<?=$d->end_date?>">
+                    <input type="date" name="end_date" id="end_date" class="form-control" placeholder="<?=$Dic['End Date']?>" value="<?=dataBr($d->end_date)?>">
                     <label for="end_date"><?=$Dic['End Date']?>*</label>
                 </div>
 
