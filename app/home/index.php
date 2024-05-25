@@ -1,6 +1,6 @@
 <?php
     $app = true;
-    include("{$_SERVER['DOCUMENT_ROOT']}/bkManaus/lib/includes.php");
+    include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
 
     if($_POST['idUnico']){
         mysqli_query($con, "insert into vendas_tmp set id_unico = '{$_POST['idUnico']}', cliente='{$_POST['codUsr']}', detalhes='{}'");

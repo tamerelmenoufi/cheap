@@ -1,12 +1,12 @@
 <?php
     $app = true;
-    include("{$_SERVER['DOCUMENT_ROOT']}/bkManaus/lib/includes.php");
+    include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
 
     if($_POST['acao'] == 'pagar'){
 
-        require "{$_SERVER['DOCUMENT_ROOT']}/bkManaus/lib/vendor/rede/Transacao.php";
+        require "{$_SERVER['DOCUMENT_ROOT']}/painel/lib/vendor/rede/Transacao.php";
 
-        require "{$_SERVER['DOCUMENT_ROOT']}/bkManaus/lib/vendor/rede/Consulta.php";
+        require "{$_SERVER['DOCUMENT_ROOT']}/painel/lib/vendor/rede/Consulta.php";
 
         file_put_contents('cartao.txt', $retorno);
         $cartao_detalhes = $retorno;

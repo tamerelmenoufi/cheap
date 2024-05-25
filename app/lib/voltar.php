@@ -1,5 +1,5 @@
 <?php
-    include("{$_SERVER['DOCUMENT_ROOT']}/bkManaus/lib/includes.php");
+    include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
 
     $i = ((count($_SESSION['historico']))?(count($_SESSION['historico']) - 2):0);
     unset($_SESSION['historico'][(count($_SESSION['historico']) - 1)]);

@@ -1,6 +1,6 @@
 <?php
     $app = true;
-    include("{$_SERVER['DOCUMENT_ROOT']}/bkManaus/lib/includes.php");
+    include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
 
 
     $telefone = str_replace(['-',' ','(',')'],false,trim($_POST['telefone']));
