@@ -31,7 +31,7 @@
             <div style="display:flex; justify-content:end">
                 <button
                     return
-                    class="btn btn-warning"
+                    class="btn btn-warning me-3"
                 ><?=$Dic['Advertisers']?></button>
 
                 <button
