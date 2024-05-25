@@ -23,7 +23,7 @@
     <link rel="icon" type="image/x-icon" href="img/icone.png">
     <title>BK - Manaus</title>
     <?php
-    include("../lib/header.php");
+    include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/header.php");
     ?>
     <Style>
         body{
