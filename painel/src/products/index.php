@@ -64,7 +64,7 @@
                   while($d = mysqli_fetch_object($result)){
                 ?>
                 <tr>
-                  <td><?=$d->segment?></td>
+                  <td><?=$d->category?></td>
                   <td><?=$d->name?></td>
                   <td><?=dataBr($d->start_date)?></td>
                   <td><?=dataBr($d->end_date)?></td>
