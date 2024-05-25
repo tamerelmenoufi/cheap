@@ -24,13 +24,14 @@
                 $path = "../volume/products/{$_POST['id']}/";
                 if(is_dir($path)){
                 $diretorio = dir($path);
-                echo "Lista de Arquivos do diretório '<strong>".$path."</strong>':<br />";
                 while($arquivo = $diretorio -> read()){
+                    if(is_file($path.$arquivo)){
             ?>
                 <div class="col-md-4">
                     <img src="src/volume/products/<?="{$_POST['id']}/{$arquivo}"?>" class="rounded mx-auto d-block" alt="...">
                 </div>
             <?php
+                    }
                 }
                 $diretorio -> close();
                 }
