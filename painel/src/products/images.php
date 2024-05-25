@@ -79,7 +79,7 @@
                                         if(bases64 && type && name){
                                             Carregando();
                                             $.ajax({
-                                                url:"src/advertisers/images.php",
+                                                url:"src/products/images.php",
                                                 type:"POST",
                                                 data:{
                                                     base64,

@@ -54,11 +54,11 @@
         $attr = implode(', ', $attr);
 
         if($_POST['id']){
-            $query = "update advertisers set {$attr} where id = '{$_POST['id']}'";
+            $query = "update products set {$attr} where id = '{$_POST['id']}'";
             mysqli_query($con, $query);
             $id = $_POST['id'];
         }else{
-            $query = "insert into advertisers set register_date = NOW(), {$attr}";
+            $query = "insert into products set register_date = NOW(), {$attr}";
             mysqli_query($con, $query);
             $id = mysqli_insert_id($con);
         }
@@ -74,7 +74,7 @@
     }
 
 
-    $query = "select * from advertisers where id = '{$_POST['id']}'";
+    $query = "select * from products where id = '{$_POST['id']}'";
     $result = mysqli_query($con, $query);
     $d = mysqli_fetch_object($result);
 ?>
@@ -86,7 +86,7 @@
         z-index:0;
     }
 </style>
-<h4 class="Titulo<?=$md5?>"><?=$Dic['Advertisers']?></h4>
+<h4 class="Titulo<?=$md5?>"><?=$Dic['products']?></h4>
     <form id="form-<?= $md5 ?>">
         <div class="row">
             <div class="col">
@@ -152,7 +152,7 @@
 
 
             $.ajax({
-                url:"src/advertisers/images.php",
+                url:"src/products/images.php",
                 type:"POST",
                 data:{
                     id:'<?=$_POST['id']?>'
@@ -179,7 +179,7 @@
                 Carregando();
 
                 $.ajax({
-                    url:"src/advertisers/form.php",
+                    url:"src/products/form.php",
                     type:"POST",
                     typeData:"JSON",
                     mimeType: 'multipart/form-data',
@@ -188,7 +188,7 @@
                         console.log(dados);
                         // if(dados.status){
                             $.ajax({
-                                url:"src/advertisers/index.php",
+                                url:"src/products/index.php",
                                 type:"POST",
                                 success:function(dados){
                                     $("#pageHome").html(dados);

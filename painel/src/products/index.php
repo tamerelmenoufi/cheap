@@ -2,12 +2,12 @@
         include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
 
     if($_POST['delete']){
-      $query = "delete from advertisers where id = '{$_POST['delete']}'";
+      $query = "delete from products where id = '{$_POST['delete']}'";
       mysqli_query($con, $query);
     }
 
     if($_POST['status']){
-      $query = "update advertisers set status = '{$_POST['opt']}' where id = '{$_POST['status']}'";
+      $query = "update products set status = '{$_POST['opt']}' where id = '{$_POST['status']}'";
       mysqli_query($con, $query);
       exit();
     }
@@ -26,7 +26,7 @@
     <div class="row">
       <div class="col">
         <div class="card">
-          <h5 class="card-header"><?=$Dic['Advertisers']?></h5>
+          <h5 class="card-header"><?=$Dic['products']?></h5>
           <div class="card-body">
             <div style="display:flex; justify-content:end">
                 <button
@@ -53,7 +53,7 @@
               </thead>
               <tbody>
                 <?php
-                  $query = "select a.*, b.segment from advertisers a left join segments b on a.segment = b.id order by a.name asc";
+                  $query = "select a.*, b.segment from products a left join segments b on a.segment = b.id order by a.name asc";
                   $result = mysqli_query($con, $query);
                   while($d = mysqli_fetch_object($result)){
                 ?>
@@ -106,7 +106,7 @@
         Carregando('none');
         $("button[newRegister]").click(function(){
             $.ajax({
-                url:"src/advertisers/form.php",
+                url:"src/products/form.php",
                 success:function(dados){
                     $(".MenuRight").html(dados);
                 }
@@ -116,7 +116,7 @@
         $("button[edit]").click(function(){
             id = $(this).attr("edit");
             $.ajax({
-                url:"src/advertisers/form.php",
+                url:"src/products/form.php",
                 type:"POST",
                 data:{
                   id
@@ -135,7 +135,7 @@
                 buttons:{
                     '<?=$Dic['Yes']?>':function(){
                         $.ajax({
-                            url:"src/advertisers/index.php",
+                            url:"src/products/index.php",
                             type:"POST",
                             data:{
                                 delete:del
@@ -168,7 +168,7 @@
 
 
             $.ajax({
-                url:"src/advertisers/index.php",
+                url:"src/products/index.php",
                 type:"POST",
                 data:{
                     status,
