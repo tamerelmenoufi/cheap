@@ -1,5 +1,5 @@
 <?php
-    include("{$_SERVER['DOCUMENT_ROOT']}/panel/lib/includes.php");
+    include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
 ?><!DOCTYPE html>
 <html lang="<?=$_SESSION['lng']?>" <?=(($_SESSION['lng'] == 'ar')?'dir="rtl"':false)?>>
 <head>
