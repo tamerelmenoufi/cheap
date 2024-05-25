@@ -49,25 +49,25 @@
             <table class="table table-striped table-hover">
               <thead>
                 <tr>
-                  <th scope="col"><?=$Dic['Segment']?></th>
+                  <th scope="col"><?=$Dic['Category']?></th>
                   <th scope="col"><?=$Dic['Name']?></th>
-                  <th scope="col"><?=$Dic['Phone']?></th>
-                  <th scope="col"><?=$Dic['E-mail']?></th>
+                  <th scope="col"><?=$Dic['start_date']?></th>
+                  <th scope="col"><?=$Dic['end_date']?></th>
                   <th scope="col"><?=$Dic['Status']?></th>
                   <th scope="col" class="text-end"><?=$Dic['Actions']?></th>
                 </tr>
               </thead>
               <tbody>
                 <?php
-                  $query = "select a.*, b.segment from products a left join segments b on a.segment = b.id order by a.name asc";
+                  $query = "select a.*, b.category from products a left join categories b on a.category = b.id order by a.name asc";
                   $result = mysqli_query($con, $query);
                   while($d = mysqli_fetch_object($result)){
                 ?>
                 <tr>
                   <td><?=$d->segment?></td>
                   <td><?=$d->name?></td>
-                  <td><?=$d->phone?></td>
-                  <td><?=$d->email?></td>
+                  <td><?=dateBr($d->start_date)?></td>
+                  <td><?=dateBr($d->end_date)?></td>
                   <td>
 
                   <div class="form-check form-switch">

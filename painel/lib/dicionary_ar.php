@@ -72,6 +72,7 @@
         'Responsible for Training' => 'مسؤول عن التدريب',
         'Responsible Phone' => 'هاتف مسؤول',
         'Training Description' => 'وصف التدريب',
+        'Description' => 'وصف',
         'No registered training' => 'لا يوجد تدريب مسجل',
         'Registered Training' => 'تدريب مسجل',
         'Registered Trainee' => 'المتدربين المسجلين',
@@ -160,5 +161,8 @@
         'Advertisers' => 'المعلنين',
         'Select the image for the Icon' => 'حدد الصورة للأيقونة',
         'Products' => 'منتجات',
+        'Start Date' => 'تاريخ البدء',
+        'End Date' => 'تاريخ الانتهاء',
+        'Select an image to include in the gallery' => 'حدد صورة لتضمينها في المعرض',
         '' => '',
     ];

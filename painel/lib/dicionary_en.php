@@ -72,6 +72,7 @@
         'Responsible for Training' => 'Responsible for Training',
         'Responsible Phone' => 'Responsible Phone',
         'Training Description' => 'Training Description',
+        'Description' => 'Description',
         'No registered training' => 'No registered training',
         'Registered Training' => 'Registered Training',
         'Registered Trainee' => 'Registered Trainee',
@@ -160,6 +161,9 @@
         'Advertisers' => 'Advertisers',
         'Select the image for the Icon' => 'Select the image for the Icon',
         'Products' => 'Products',
+        'Start Date' => 'Start Date',
+        'End Date' => 'End Date',
+        'Select an image to include in the gallery' => 'Select an image to include in the gallery',
         '' => '',
 
     ];

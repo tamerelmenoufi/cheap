@@ -3,38 +3,6 @@
 
 
 
-
-    if ($data['icon-base']) {
-
-        $md52 = md5($md5.$data['icon-name']);
-
-        if(!is_dir("../volume")) mkdir("../volume");
-        if(!is_dir("../volume/produtos")) mkdir("../volume/produtos");
-
-        list($x, $icon) = explode(';base64,', $data['icon-base']);
-        $icon = base64_decode($icon);
-        $pos = strripos($data['icon-name'], '.');
-        $ext = substr($data['icon-name'], $pos, strlen($data['icon-name']));
-
-        $atual = $data['icon-atual'];
-
-        unset($data['icon-base']);
-        unset($data['icon-type']);
-        unset($data['icon-name']);
-        unset($data['icon-atual']);
-
-        if (file_put_contents("../volume/produtos/{$md52}{$ext}", $icon)) {
-            $attr[] = "icon = '{$md52}{$ext}'";
-            if ($atual) {
-                unlink("../volume/produtos/{$atual}");
-            }
-        }
-
-    }
-
-
-
-
     if($_POST['action'] == 'save'){
 
         $data = $_POST;
@@ -42,13 +10,9 @@
 
         unset($data['id']);
         unset($data['action']);
-        unset($data['password']);
 
         foreach ($data as $name => $value) {
             $attr[] = "{$name} = '" . addslashes($value) . "'";
-        }
-        if($_POST['password']){
-            $attr[] = "password = '" . md5($_POST['password']) . "'";
         }
 
         $attr = implode(', ', $attr);
@@ -94,32 +58,38 @@
                     <input type="text" class="form-control" id="name" name="name" placeholder="<?=$Dic['Full Name']?>" value="<?=$d->name?>">
                     <label for="nome"><?=$Dic['Name']?>*</label>
                 </div>
+
                 <div class="form-floating mb-3">
-                    <select name="segment" class="form-control" id="segment">
+                    <select name="category" class="form-control" id="category">
                         <?php
-                        $q = "select * from segments where status = '1' order by segment";
+                        $q = "select * from categories where status = '1' order by category";
                         $r = mysqli_query($con, $q);
                         while($s = mysqli_fetch_object($r)){
                         ?>
-                        <option value="<?=$s->id?>" <?=(($d->segment == $s->id)?'selected':false)?>><?=$s->segment?></option>
+                        <option value="<?=$s->id?>" <?=(($d->category == $s->id)?'selected':false)?>><?=$s->category?></option>
                         <?php
                         }
                         ?>
                     </select>
-                    <label for="segment"><?=$Dic['Segment']?></label>
-                </div>
-                <div class="form-floating mb-3">
-                    <input type="text" name="phone" id="phone" class="form-control" placeholder="<?=$Dic['Phone']?>" value="<?=$d->phone?>">
-                    <label for="telefone"><?=$Dic['Phone']?>*</label>
-                </div>
-                <div class="form-floating mb-3">
-                    <input type="text" name="email" id="email" class="form-control" placeholder="<?=$Dic['E-mail']?>" value="<?=$d->email?>">
-                    <label for="email"><?=$Dic['E-mail']?></label>
+                    <label for="category"><?=$Dic['Category']?></label>
                 </div>
 
                 <div class="form-floating mb-3">
-                    <input type="text" name="addres" id="addres" class="form-control" placeholder="<?=$Dic['Addres']?>" value="<?=$d->addres?>">
-                    <label for="addres"><?=$Dic['Addres']?></label>
+                    <input type="text" class="form-control" id="description" name="description" placeholder="<?=$Dic['Description']?>" value="<?=$d->description?>">
+                    <label for="description"><?=$Dic['Description']?>*</label>
+                </div>
+
+                <input type="file" class="form-control" placeholder="Icon">
+                <div class="form-text mb-3"><?=$Dic['Select an image to include in the gallery']?></div>
+                <div id="divImages"></div>
+
+                <div class="form-floating mb-3">
+                    <input type="date" name="start_date" id="start_date" class="form-control" placeholder="<?=$Dic['Start Date']?>" value="<?=$d->start_date?>">
+                    <label for="start_date"><?=$Dic['Start Date']?>*</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="date" name="end_date" id="end_date" class="form-control" placeholder="<?=$Dic['End Date']?>" value="<?=$d->end_date?>">
+                    <label for="end_date"><?=$Dic['End Date']?>*</label>
                 </div>
 
                 <div class="form-floating mb-3">
@@ -146,10 +116,6 @@
     <script>
         $(function(){
             Carregando('none');
-
-            $("#identity").mask("9 999999 99 99999");
-            $("#phone").mask("299999999999");
-
 
             $.ajax({
                 url:"src/products/images.php",

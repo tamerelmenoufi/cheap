@@ -6,38 +6,35 @@
         $md52 = md5($md5.$_POST['name'].$_POST['type'].$_POST['base64']);
 
         if(!is_dir("../volume")) mkdir("../volume");
-        if(!is_dir("../volume/produtos")) mkdir("../volume/produtos");
+        if(!is_dir("../volume/products")) mkdir("../volume/products");
+        if(!is_dir("../volume/products/{$_POST['id']}")) mkdir("../volume/products/{$_POST['id']}");
 
-        list($x, $icon) = explode(';base64,', $data['icon-base']);
-        $icon = base64_decode($icon);
-        $pos = strripos($data['icon-name'], '.');
-        $ext = substr($data['icon-name'], $pos, strlen($data['icon-name']));
+        list($x, $img) = explode(';base64,', $_POST['base64']);
+        $img = base64_decode($img);
+        $pos = strripos($_POST['name'], '.');
+        $ext = substr($_POST['name'], $pos, strlen($_POST['name']));
 
-        $atual = $data['icon-atual'];
-
-        unset($data['icon-base']);
-        unset($data['icon-type']);
-        unset($data['icon-name']);
-        unset($data['icon-atual']);
-
-        if (file_put_contents("../volume/produtos/{$md52}{$ext}", $icon)) {
-            $attr[] = "icon = '{$md52}{$ext}'";
-            if ($atual) {
-                unlink("../volume/produtos/{$atual}");
-            }
-        }
+        file_put_contents("../volume/produtos/{$_POST['id']}/{$md52}{$ext}", $img);
 
     }
 
 ?>
-
         <div class="row">
-            <div class="col">
-                
-                <input type="hidden" id="id" value="<?=$_POST['id']?>" />
-            </div>
-        </div>
+            <?php
+                $path = "../volume/produtos/{$_POST['id']}/";
+                $diretorio = dir($path);
 
+                echo "Lista de Arquivos do diretório '<strong>".$path."</strong>':<br />";
+                while($arquivo = $diretorio -> read()){
+            ?>
+                <div class="col-md-4">
+                    <img src="src/volume/produtos/<?="{$_POST['id']}/{$arquivo}"?>" class="rounded mx-auto d-block" alt="...">
+                </div>
+            <?php
+                }
+                $diretorio -> close();
+            ?>
+        </div>
 
     <script>
         $(function(){
