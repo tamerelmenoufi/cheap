@@ -134,7 +134,7 @@
     </div>
 
     <?php
-    include("../lib/footer.php");
+    include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/footer.php");
     ?>
 
     <script>
