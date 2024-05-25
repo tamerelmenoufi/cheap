@@ -27,8 +27,8 @@
                 while($arquivo = $diretorio -> read()){
                     if(is_file($path.$arquivo)){
             ?>
-                <div class="col-md-4 m-1">
-                    <img src="src/volume/products/<?="{$_POST['id']}/{$arquivo}"?>" class="img-fluid">
+                <div class="col-md-4">
+                    <img src="src/volume/products/<?="{$_POST['id']}/{$arquivo}"?>" class="img-fluid m-3">
                 </div>
             <?php
                     }
