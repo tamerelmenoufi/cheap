@@ -66,8 +66,8 @@
                 <tr>
                   <td><?=$d->segment?></td>
                   <td><?=$d->name?></td>
-                  <td><?=dateBr($d->start_date)?></td>
-                  <td><?=dateBr($d->end_date)?></td>
+                  <td><?=dataBr($d->start_date)?></td>
+                  <td><?=dataBr($d->end_date)?></td>
                   <td>
 
                   <div class="form-check form-switch">
