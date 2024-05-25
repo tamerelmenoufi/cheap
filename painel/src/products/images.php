@@ -74,7 +74,9 @@
                                         var base64 = canvas.toDataURL(file.type); //f.target.result;
                                         var type = file.type;
                                         var name = file.name;
-                                        if(bases64 && type && name){
+                                        console.log(type)
+                                        console.log(name)
+                                        if(base64 && type && name){
                                             Carregando();
                                             $.ajax({
                                                 url:"src/products/images.php",
@@ -86,6 +88,8 @@
                                                     action:'saveImage'
                                                 },
                                                 success:function(dados){
+                                                    console.log(dados)
+
                                                     $("#divImages").html(dados);
                                                 }
                                             });
