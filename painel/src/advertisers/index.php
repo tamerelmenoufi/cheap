@@ -70,6 +70,11 @@
                   </div>
 
                   </td>
+
+                  <button class="btn btn-danger" products="<?=$d->id?>">
+                    <?=$Dic['Products']?>
+                  </button>
+
                   <td class="text-end">
                     <button
                       class="btn btn-primary"
@@ -82,6 +87,7 @@
                     >
                     <?=$Dic['Edit']?>
                     </button>
+
                     <button class="btn btn-danger" delete="<?=$d->id?>" image="<?=$d->image?>">
                     <?=$Dic['Delete']?>
                     </button>
@@ -124,6 +130,20 @@
                 },
                 success:function(dados){
                     $(".MenuRight").html(dados);
+                }
+            })
+        })
+
+        $("button[products]").click(function(){
+            advertiser = $(this).attr("products");
+            $.ajax({
+                url:"src/products/index.php",
+                type:"POST",
+                data:{
+                  advertiser
+                },
+                success:function(dados){
+                  $("#pageHome").html(dados);
                 }
             })
         })

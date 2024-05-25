@@ -159,5 +159,6 @@
         'Custmer List' => 'قائمة العملاء',
         'Advertisers' => 'المعلنين',
         'Select the image for the Icon' => 'حدد الصورة للأيقونة',
+        'Products' => 'منتجات',
         '' => '',
     ];
