@@ -19,7 +19,7 @@
     }
 
 ?>
-        <div class="row">
+        <div class="row mb-3">
             <?php
                 $path = "../volume/products/{$_POST['id']}/";
                 if(is_dir($path)){
@@ -27,7 +27,7 @@
                 while($arquivo = $diretorio -> read()){
                     if(is_file($path.$arquivo)){
             ?>
-                <div class="col-md-4">
+                <div class="col-md-4 m-1">
                     <img src="src/volume/products/<?="{$_POST['id']}/{$arquivo}"?>" class="img-fluid">
                 </div>
             <?php
