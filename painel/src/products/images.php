@@ -82,7 +82,7 @@
                                                 url:"src/products/images.php",
                                                 type:"POST",
                                                 data:{
-                                                    id:'<?=$_POST['id']?>'
+                                                    id:'<?=$_POST['id']?>',
                                                     base64,
                                                     type,
                                                     name,
