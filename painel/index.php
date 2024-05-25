@@ -27,7 +27,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-    <title>TCV - Panel</title>
+    <title>Cheap - Panel</title>
     <?php
     include("lib/header.php");
     ?>
