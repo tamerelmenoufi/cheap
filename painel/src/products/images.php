@@ -28,7 +28,7 @@
                     if(is_file($path.$arquivo)){
             ?>
                 <div class="col-md-4">
-                    <img src="src/volume/products/<?="{$_POST['id']}/{$arquivo}"?>" class="rounded mx-auto d-block" alt="...">
+                    <img src="src/volume/products/<?="{$_POST['id']}/{$arquivo}"?>" class="img-fluid">
                 </div>
             <?php
                     }
