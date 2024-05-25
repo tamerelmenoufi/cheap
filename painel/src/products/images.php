@@ -14,21 +14,21 @@
         $pos = strripos($_POST['name'], '.');
         $ext = substr($_POST['name'], $pos, strlen($_POST['name']));
 
-        file_put_contents("../volume/produtos/{$_POST['id']}/{$md52}{$ext}", $img);
+        file_put_contents("../volume/products/{$_POST['id']}/{$md52}{$ext}", $img);
 
     }
 
 ?>
         <div class="row">
             <?php
-                $path = "../volume/produtos/{$_POST['id']}/";
+                $path = "../volume/products/{$_POST['id']}/";
                 if(is_dir($path)){
                 $diretorio = dir($path);
                 echo "Lista de Arquivos do diretório '<strong>".$path."</strong>':<br />";
                 while($arquivo = $diretorio -> read()){
             ?>
                 <div class="col-md-4">
-                    <img src="src/volume/produtos/<?="{$_POST['id']}/{$arquivo}"?>" class="rounded mx-auto d-block" alt="...">
+                    <img src="src/volume/products/<?="{$_POST['id']}/{$arquivo}"?>" class="rounded mx-auto d-block" alt="...">
                 </div>
             <?php
                 }
@@ -82,6 +82,7 @@
                                                 url:"src/products/images.php",
                                                 type:"POST",
                                                 data:{
+                                                    id:'<?=$_POST['id']?>'
                                                     base64,
                                                     type,
                                                     name,
