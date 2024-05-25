@@ -31,9 +31,7 @@
     <div class="col-4">
         <div class="d-flex justify-content-center align-items-center" style="height:65px;">
             <img class="topoImg" src="img/logo2.png?xxx" />
-            <!-- <h1 class="nameLogo">TCV</h1> -->
         </div>
-        <!-- <h1 class="topoImg">TCV</h1> -->
     </div>
     <div class="col-4">
         <?php

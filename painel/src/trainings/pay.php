@@ -45,7 +45,7 @@
         }
         $_SESSION['token'] = $token;
 
-        EnviarWappNovo($_SESSION['ProjectPainel']->phone, $Dic['TCV Inform: Your payment activation code is'].' '.$_SESSION['token']);
+        EnviarWappNovo($_SESSION['ProjectPainel']->phone, $Dic['SIS Inform: Your payment activation code is'].' '.$_SESSION['token']);
 
 ?>
 

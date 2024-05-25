@@ -8,7 +8,7 @@
     }
     $_SESSION['token'] = $token;
 
-    EnviarWappNovo($_SESSION['ProjectPainel']->phone, $Dic['TCV Inform: Your code to unsubscribe is'].' '.$_SESSION['token']);
+    EnviarWappNovo($_SESSION['ProjectPainel']->phone, $Dic['SIS Inform: Your code to unsubscribe is'].' '.$_SESSION['token']);
 
 
 ?>
