@@ -11,11 +11,14 @@
         position:relative;
         width:100%;
     }
-    .slider-for div img{
+    .slider-for div{
         margin:0;
         padding:0;
         width:100%;
         height:auto;
+        background-size:cover;
+        position:relative; 
+        background-color:orange; 
     }
 
 </style>
@@ -29,7 +32,7 @@
         // while($d = mysqli_fetch_object($result)){
         for($i=0;$i<5;$i++){
         ?>
-        <div style="position:relative; background:orange; padding:0; margin:0; background-image:url(http://cheappanel.mohatron.com/src/volume/products/1/a55f6be79878b5e34ef5aaf3a9b80fa4.png); background-size:cover;"></div>
+        <div style="background-image:url(http://cheappanel.mohatron.com/src/volume/products/1/a55f6be79878b5e34ef5aaf3a9b80fa4.png);"></div>
         <?php
         }
         ?>
