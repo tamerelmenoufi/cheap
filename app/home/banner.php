@@ -15,7 +15,7 @@
         margin:0;
         padding:0;
         width:100%;
-        height:auto;
+        height:300px;
         background-size:cover;
         position:relative; 
         background-color:orange; 
