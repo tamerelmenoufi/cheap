@@ -39,6 +39,14 @@
         padding:0;
         width:100%;
     }
+    .foto{
+        cursor:pointer;
+        border:solid 1px #eee;
+        border-radius:7px;
+    }
+    .foto:hover:{
+        border:solid 1px #ccc;
+    }
 </style>
 <div class="barra_topo"></div>
 <div class="home_corpo">
@@ -88,7 +96,7 @@
         <?php
                     }else{
         ?>
-            <div class="col-<?=$c?>">
+            <div class="col-<?=$c?> foto" registo="<?=$d->id?>" imagem="<?=$arquivo?>">
                 <div class="m-3">
                     <img src="<?=$localPainel?>src/volume/products/<?="{$d->id}/{$arquivo}"?>" class="img-fluid">
                 </div>
