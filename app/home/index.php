@@ -70,7 +70,7 @@
 
             $p=0;
             while($arquivo = $diretorio -> read()){
-                if(is_file($path.$arquivo)){
+                if(is_file($path.$arquivo) and $p <= 6){
 
                     if($n == 1){
                         $c = 1;
