@@ -38,3 +38,8 @@
 
 <!-- TimeLine -->
 <link rel="stylesheet" type="text/css" href="<?=$localPainel?>lib/vendor/timeline/css.css" />
+
+<!-- slick -->
+<link href="<?=$localPainel?>lib/vendor/slick/slick.css" rel="stylesheet">
+<script src="<?=$localPainel?>lib/vendor/slick/slick.js" ></script>
+
