@@ -96,9 +96,14 @@
         <?php
                     }else{
         ?>
-            <div class="col-<?=$c?> foto" registo="<?=$d->id?>" imagem="<?=$arquivo?>">
+            <div class="col-<?=$c?>">
                 <div class="m-3">
-                    <img src="<?=$localPainel?>src/volume/products/<?="{$d->id}/{$arquivo}"?>" class="img-fluid">
+                    <img 
+                        src="<?=$localPainel?>src/volume/products/<?="{$d->id}/{$arquivo}"?>" 
+                        class="img-fluid foto" 
+                        registo="<?=$d->id?>" 
+                        imagem="<?=$arquivo?>"
+                    >
                 </div>
             </div>
         <?php
