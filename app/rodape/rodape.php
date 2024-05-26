@@ -78,9 +78,9 @@ include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
             <p <?=(($pdAtiva == 'usuarios/perfil.php')?'style="color:#ffdb37;"':false)?>>Perfil</p>
         </div>
     
-        <div navegacao="pedido/resumo.php" class="telaPedido">
-            <i class="fa-regular fa-heart" <?=(($pdAtiva == 'pedido/resumo.php')?'style="color:#ffdb37;"':false)?>></i>
-            <p <?=(($pdAtiva == 'pedido/resumo.php')?'style="color:#ffdb37;"':false)?>>Favorito</p>
+        <div navegacao="favorito/index.php" class="telaPedido">
+            <i class="fa-regular fa-heart" <?=(($pdAtiva == 'favorito/index.php')?'style="color:#ffdb37;"':false)?>></i>
+            <p <?=(($pdAtiva == 'favorito/index.php')?'style="color:#ffdb37;"':false)?>>Favorito</p>
             <span class="itens_produtos_add"><?=$qt_pedidos?></span>
         </div>        
 
