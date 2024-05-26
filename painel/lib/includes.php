@@ -12,6 +12,9 @@
     $md5 = md5(date("YmdHis"));
 
 
+    $_SESSION = [];
+
+
     if($_POST['historico']){
         echo "<br><br><br><br><br><br><br><br><br><br>".$_SERVER["PHP_SELF"];
         $pagina = str_replace("/bkManaus/app/", false, $_SERVER["PHP_SELF"]);
