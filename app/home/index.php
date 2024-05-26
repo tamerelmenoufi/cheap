@@ -165,6 +165,10 @@ $(function(){
     //     }
     // });
 
+    $(".foto").click(function(){
+        $(".popupArea").css("display","flex");
+    })
+
 
 })
 
