@@ -86,12 +86,12 @@ $(function(){
         }
     });
 
-    $.ajax({
-        url:"home/banner.php",
-        success:function(dados){
-            $(".banner").html(dados);
-        }
-    });
+    // $.ajax({
+    //     url:"home/banner.php",
+    //     success:function(dados){
+    //         $(".banner").html(dados);
+    //     }
+    // });
 
 
 })
