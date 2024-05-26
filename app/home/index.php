@@ -44,16 +44,11 @@
 <div class="home_corpo">
     
 
-
-    <div class="card m-3 nb-0">
-    <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <img src="http://cheappanel.mohatron.com/src/volume/products/1/a55f6be79878b5e34ef5aaf3a9b80fa4.png" class="card-img-bottom" alt="...">
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-    </div>
-    </div>
-
+<?php
+    $query = "select * form products ";
+    $result = mysqli_query($con, $query);
+    while($d = mysqli_fetch_object($result)){
+?>
     <div class="card m-3 nb-0">
     <div class="card-body">
         <h5 class="card-title">Card title</h5>
@@ -64,7 +59,9 @@
         <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
     </div>
     </div>    
-
+<?php
+    }
+?>
 
 </div>
 <div class="home_rodape"></div>
