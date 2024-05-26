@@ -16,10 +16,6 @@
     $localPainel = $_SERVER["REQUEST_SCHEME"]."://cheappanel.mohatron.com/";
     $localSite = $_SERVER["REQUEST_SCHEME"]."://cheap.mohatron.com/";
 
-
-    $localPainel = "//cheappanel.mohatron.com/";
-    $localSite = "//cheap.mohatron.com/";
-
     if($_GET['ln']){
         $_SESSION['lng'] = $_GET['ln'];
     }
