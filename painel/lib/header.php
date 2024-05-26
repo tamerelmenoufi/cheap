@@ -1,12 +1,5 @@
-<link
-    href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-    rel="stylesheet"
->
-<script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBSnblPMOwEdteX5UPYXf7XUtJYcbypx6w&callback=initMap&v=weekly&language=pt&region=BR"
-></script>
-
-<link href="<?=$localPainel?>lib/vendor/bootstrap-5.2.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+<!-- <link href="<?=$localPainel?>lib/vendor/bootstrap-5.2.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous"> -->
+<link href="<?=$localPainel?>lib/vendor/bootstrap-5.2.0/css/bootstrap<?=(($_SESSION['lng'] == 'ar')?'.rtl':false)?>.min.css" rel="stylesheet" >
 <link href="<?=$localPainel?>lib/vendor/jquery-confirm-v3.3.4/dist/jquery-confirm.min.css" rel="stylesheet" >
 
 
@@ -20,9 +13,28 @@
 <script src="<?=$localPainel?>lib/vendor/chart/chart.min.js" ></script>
 
 <link href="<?=$localPainel?>lib/css/app.css" rel="stylesheet">
-<script src="<?=$localPainel?>lib/js/app.js?<?=date("YmdHis")?>" ></script>
-
-<link href="<?=$localPainel?>lib/vendor/slick/slick.css" rel="stylesheet">
-<script src="<?=$localPainel?>lib/vendor/slick/slick.js" ></script>
+<script src="<?=$localPainel?>lib/js/app.js" ></script>
 
 
+<!-- JQUERY UI -->
+<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+<script src="<?=$localPainel?>lib/vendor/jquery-3.6.0/jquery-ui.js"></script>
+
+<script src="<?=$localPainel?>lib/vendor/bootstrap-5.2.0/js/bootstrap.bundle.min.js"></script>
+
+
+<!-- SELECT2 BOOTSTRAP5 -->
+<link rel="stylesheet" href="<?=$localPainel?>lib/vendor/select2-bootstrap-5/select2.min.css" />
+<link rel="stylesheet" href="<?=$localPainel?>lib/vendor/select2-bootstrap-5/select2-bootstrap-5-theme<?=(($_SESSION['lng'] == 'ar')?'.rtl':false)?>.min.css" />
+
+<!-- SELECT2 BOOTSTRAP5 -->
+<script src="<?=$localPainel?>lib/vendor/select2-bootstrap-5/select2.min.js"></script>
+
+<script type="text/javascript" src="<?=$localPainel?>lib/vendor/daterangepicker/moment.min.js"></script>
+<!-- <script type="text/javascript" src="<?=$localPainel?>lib/vendor/daterangepicker/ar.js"></script> -->
+<script type="text/javascript" src="<?=$localPainel?>lib/vendor/daterangepicker/daterangepicker.min.js"></script>
+<link rel="stylesheet" type="text/css" href="<?=$localPainel?>lib/vendor/daterangepicker/daterangepicker.css" />
+
+
+<!-- TimeLine -->
+<link rel="stylesheet" type="text/css" href="<?=$localPainel?>lib/vendor/timeline/css.css" />
