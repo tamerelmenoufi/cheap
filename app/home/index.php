@@ -89,7 +89,6 @@
                     }else{
         ?>
             <div class="col-4">
-                <?=$n?>
                 <img src="<?=$localPainel?>src/volume/products/<?="{$d->id}/{$arquivo}"?>" class="img-fluid m-3">
             </div>
         <?php
