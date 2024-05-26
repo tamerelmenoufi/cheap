@@ -29,7 +29,7 @@
         // while($d = mysqli_fetch_object($result)){
         for($i=0;$i<5;$i++){
         ?>
-        <div style="position:relative; background:orange;">
+        <div style="position:relative; background:orange; padding:0; margin:0">
             <img src="http://cheappanel.mohatron.com/src/volume/products/1/a55f6be79878b5e34ef5aaf3a9b80fa4.png" style="width:100%; border:solid 1px green; position:relative;" />
         </div>
         <?php
