@@ -34,12 +34,17 @@
         bottom:0;
         height:80px;
     }
-
+    .banner{
+        margin:0;
+        padding:0;
+        width:100%;
+        border:solid 1px red;
+    }
 </style>
 <div class="barra_topo"></div>
 <div class="home_corpo">
     <h1><i class="fa fa-users"></i> Conteúdo</h1>
-    <div class="banner w-100"></div>
+    <div class="banner"></div>
 </div>
 <div class="home_rodape"></div>
 
