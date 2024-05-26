@@ -12,7 +12,7 @@
     $md5 = md5(date("YmdHis"));
 
 
-    $_SESSION = [];
+    // $_SESSION = [];
 
 
     // if($_POST['historico']){
