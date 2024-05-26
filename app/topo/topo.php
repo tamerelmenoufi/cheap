@@ -1,18 +1,5 @@
 <?php
 include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
-
-if($_POST['idUnico']){
-    $_SESSION['idUnico'] = $_POST['idUnico'];
-}
-
-if($_POST['codUsr']){
-    $_SESSION['codUsr'] = $_POST['codUsr'];
-}
-
-$query = "select * from clientes a left join enderecos b on (a.codigo = b.cliente and padrao = '1') where a.codigo = '{$_SESSION['codUsr']}'";
-$result = mysqli_query($con, $query);
-$c = mysqli_fetch_object($result);
-
 ?>
 
 <style>
@@ -47,16 +34,6 @@ $c = mysqli_fetch_object($result);
     
 </style>
 <div class="topo">
-    <p class="dados">
-        <?php
-        if($c->nome){
-            echo $c->nome;
-        }
-        if($c->logradouro and $c->numero and $c->bairro){
-            echo "<br>{$c->logradouro}, {$c->numero}, {$c->bairro}";
-        }
-        ?>
-    </p>
     <i class="voltar fa-solid fa-arrow-left"></i>
 </div>
 <script>

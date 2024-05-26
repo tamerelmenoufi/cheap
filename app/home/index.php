@@ -1,7 +1,6 @@
 <?php
     $app = true;
     include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
-
 ?>
 <style>
     .barra_topo{

@@ -1,19 +1,6 @@
 <?php
 include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
 
-$i = ((count($_SESSION['historico']))?(count($_SESSION['historico']) - 1):0);
-    
-$pdAtiva = $_SESSION['historico'][$i]['local'];
-
-$v = mysqli_fetch_object(mysqli_query($con, "select * from vendas_tmp where id_unico = '{$_SESSION['idUnico']}'"));
-//object(stdClass)#4 (1) { ["item35"]=> object(stdClass)#6 (9) { ["tipo"]=> string(7) "produto" ["total"]=> float(30.9) ["valor"]=> float(30.9) ["codigo"]=> int(35) ["regras"]=> object(stdClass)#7 (1) { ["categoria"]=> string(1) "5" } ["status"]=> string(0) "" ["adicional"]=> int(0) ["anotacoes"]=> string(0) "" ["quantidade"]=> int(1) } }
-$qt_pedidos = 0;
-foreach(json_decode($v->detalhes) as $ind => $val){
-    if($val->status){
-        $qt_pedidos++;
-    }
-}
-
 ?>
 
 <style>
@@ -85,30 +72,21 @@ foreach(json_decode($v->detalhes) as $ind => $val){
 <div class="rodape">
     <div class="d-flex justify-content-between align-items-center rodape_area">
         <img home src="img/logo.png" />
-        <div navegacao="home/index.php">
-            <i class="fa-solid fa-house" <?=(($pdAtiva == 'home/index.php')?'style="color:#ffdb37;"':false)?>></i>
-            <p <?=(($pdAtiva == 'home/index.php')?'style="color:#ffdb37;"':false)?>>Home</p>
-        </div>
 
         <div navegacao="usuarios/perfil.php" class="telaPedido">
             <i class="fa-solid fa-user" <?=(($pdAtiva == 'usuarios/perfil.php')?'style="color:#ffdb37;"':false)?>></i>
             <p <?=(($pdAtiva == 'usuarios/perfil.php')?'style="color:#ffdb37;"':false)?>>Perfil</p>
         </div>
-        
-        <!-- <div navegacao="home/index.php" class="telaPedido">
-            <i class="fa-solid fa-burger" <?=(($pdAtiva == 'home/index.php')?'style="color:#ffdb37;"':false)?>></i>
-            <p <?=(($pdAtiva == 'home/index.php')?'style="color:#ffdb37;"':false)?>>Menu</p>
-        </div> -->
-        
+    
         <div navegacao="pedido/resumo.php" class="telaPedido">
             <i class="fa-solid fa-bag-shopping" <?=(($pdAtiva == 'pedido/resumo.php')?'style="color:#ffdb37;"':false)?>></i>
-            <p <?=(($pdAtiva == 'pedido/resumo.php')?'style="color:#ffdb37;"':false)?>>Pedido</p>
+            <p <?=(($pdAtiva == 'pedido/resumo.php')?'style="color:#ffdb37;"':false)?>>Favorito</p>
             <span class="itens_produtos_add"><?=$qt_pedidos?></span>
         </div>        
 
         <div navegacao="pedido/pagar.php">
             <i class="fa-solid fa-circle-dollar-to-slot" <?=(($pdAtiva == 'pedido/pagar.php')?'style="color:#ffdb37;"':false)?>></i>
-            <p <?=(($pdAtiva == 'pedido/pagar.php')?'style="color:#ffdb37;"':false)?>>Pagar</p>
+            <p <?=(($pdAtiva == 'pedido/pagar.php')?'style="color:#ffdb37;"':false)?>>Busca</p>
         </div> 
         
         <div navegacao="contatos/index.php">
