@@ -59,10 +59,12 @@
             $path = "{$_SERVER['DOCUMENT_ROOT']}/painel/src/volume/products/{$d->id}/";
             if(is_dir($path)){
             $diretorio = dir($path);
+            $n = (count($diretorio) - 2); 
             while($arquivo = $diretorio -> read()){
                 if(is_file($path.$arquivo)){
         ?>
             <div class="col-4">
+                <?=$n?>
                 <img src="<?=$localPainel?>src/volume/products/<?="{$d->id}/{$arquivo}"?>" class="img-fluid m-3">
             </div>
         <?php
