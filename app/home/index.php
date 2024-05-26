@@ -43,6 +43,7 @@
         cursor:pointer;
         border:solid 1px #eee;
         border-radius:7px;
+        min-height:120px;
     }
     .foto:hover{
         border:solid 1px #ccc;
