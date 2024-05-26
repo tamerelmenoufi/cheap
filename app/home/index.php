@@ -44,7 +44,7 @@
         border:solid 1px #eee;
         border-radius:7px;
     }
-    .foto:hover:{
+    .foto:hover{
         border:solid 1px #ccc;
     }
 </style>
