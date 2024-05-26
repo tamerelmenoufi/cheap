@@ -37,8 +37,7 @@
 </style>
 <div class="barra_topo"></div>
 <div class="home_corpo">
-    <div class="home_promocao"></div>
-    <div class="home_categorias"></div>
+    <h1><i class="fa fa-users"></i> Conteúdo</h1>
 </div>
 <div class="home_rodape"></div>
 
@@ -67,14 +66,6 @@ $(function(){
         },  
         success:function(dados){
             $(".barra_topo").append(dados);
-        }
-    });
-
-    
-    $.ajax({
-        url:"home/home.php",
-        success:function(dados){
-            $(".home_corpo").html(dados);
         }
     });
 
