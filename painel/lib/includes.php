@@ -13,7 +13,7 @@
 
 
     if($_POST['historico']){
-        echo $_SERVER["PHP_SELF"];
+        echo "<br><br><br><br><br><br><br><br><br><br>".$_SERVER["PHP_SELF"];
         $pagina = str_replace("/bkManaus/app/", false, $_SERVER["PHP_SELF"]);
         $destino = $_POST['historico'];
         $i = ((count($_SESSION['historico']))?(count($_SESSION['historico']) -1):0);
