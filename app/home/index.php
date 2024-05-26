@@ -34,11 +34,12 @@
         bottom:0;
         height:80px;
     }
+
 </style>
 <div class="barra_topo"></div>
 <div class="home_corpo">
     <h1><i class="fa fa-users"></i> Conteúdo</h1>
-    <div class="banner"></div>
+    <div class="banner w-100"></div>
 </div>
 <div class="home_rodape"></div>
 
