@@ -11,22 +11,13 @@
         position:relative;
         width:100%;
     }
-    .slider-for img{
+    .slider-for div img{
         margin:0;
         padding:0;
         width:100%;
         height:auto;
     }
-    .barra_banner{
-        position: absolute;
-        margin-top:-36px;
-        height:30px;
-        width:100%;
-    }
-    .barra_banner div{
-        background-color:#fff;
-        width:100%;
-    } 
+
 </style>
 
 <div class="slider">
