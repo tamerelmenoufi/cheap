@@ -68,15 +68,33 @@
             $n = count($n);
 
 
-
+            $p=0;
             while($arquivo = $diretorio -> read()){
                 if(is_file($path.$arquivo)){
+
+                    if($n == 1){
+                        $c = 1;
+                    }elseif($n == 2){
+                        $c = 2;
+                    }else{
+                        $c = 3;
+                    }
+
+                    if($p == 5){
+        ?>
+            <div class="col-4">
+                <h1>+ <?=($n - 5)?></h1>
+            </div>
+        <?php
+                    }else{
         ?>
             <div class="col-4">
                 <?=$n?>
                 <img src="<?=$localPainel?>src/volume/products/<?="{$d->id}/{$arquivo}"?>" class="img-fluid m-3">
             </div>
         <?php
+                    }
+                $p++;
                 }
             }
             $diretorio -> close();
