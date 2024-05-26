@@ -63,7 +63,7 @@
                 if(is_file($path.$arquivo)){
         ?>
             <div class="col-4">
-                <img src="src/volume/products/<?="{$_POST['id']}/{$arquivo}"?>" class="img-fluid m-3">
+                <img src="<?=$localPainel?>src/volume/products/<?="{$d->id}/{$arquivo}"?>" class="img-fluid m-3">
             </div>
         <?php
                 }
