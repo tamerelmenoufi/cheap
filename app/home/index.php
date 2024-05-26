@@ -45,7 +45,7 @@
     
 
 
-    <div class="card m-3">
+    <div class="card m-3 nb-0">
     <div class="card-body">
         <h5 class="card-title">Card title</h5>
         <img src="http://cheappanel.mohatron.com/src/volume/products/1/a55f6be79878b5e34ef5aaf3a9b80fa4.png" class="card-img-bottom" alt="...">
