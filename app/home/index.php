@@ -59,8 +59,9 @@
             $path = "{$_SERVER['DOCUMENT_ROOT']}/painel/src/volume/products/{$d->id}/";
             if(is_dir($path)){
             $diretorio = dir($path);
-            $n = (count($diretorio) - 2); 
-            while($arquivo = $diretorio -> read()){
+            $vetor = $diretorio -> read();
+            $n = (count($vetor) - 2); 
+            while($arquivo = $vetor){
                 if(is_file($path.$arquivo)){
         ?>
             <div class="col-4">
