@@ -73,22 +73,22 @@
                 if(is_file($path.$arquivo) and $p < 6){
 
                     if($n == 1){
-                        $c = 1;
+                        $c = 12;
                     }elseif($n == 2){
-                        $c = 2;
+                        $c = 6;
                     }else{
-                        $c = 3;
+                        $c = 4;
                     }
 
                     if($p == 5){
         ?>
-            <div class="col-4">
+            <div class="col-<?=$c?>">
                 <h1>+ <?=($n - 5)?></h1>
             </div>
         <?php
                     }else{
         ?>
-            <div class="col-4">
+            <div class="col-<?=$c?>">
                 <div class="m-3">
                     <img src="<?=$localPainel?>src/volume/products/<?="{$d->id}/{$arquivo}"?>" class="img-fluid">
                 </div>
