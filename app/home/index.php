@@ -59,7 +59,16 @@
             $path = "{$_SERVER['DOCUMENT_ROOT']}/painel/src/volume/products/{$d->id}/";
             if(is_dir($path)){
             $diretorio = dir($path);
-            $n = (count($diretorio -> read()) - 2); 
+            
+            // Lista todos os arquivos e diretórios
+            $n = scandir($path);
+            // Filtra a lista para remover os diretórios '.' e '..'
+            $n = array_diff($n, array('.', '..'));
+            // Retorna a quantidade de arquivos
+            $n = count($n);
+
+
+
             while($arquivo = $diretorio -> read()){
                 if(is_file($path.$arquivo)){
         ?>
