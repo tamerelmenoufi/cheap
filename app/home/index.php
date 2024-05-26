@@ -48,10 +48,10 @@
 <div class="card">
   <div class="card-body">
     <h5 class="card-title">Card title</h5>
+    <img src="http://cheappanel.mohatron.com/src/volume/products/1/a55f6be79878b5e34ef5aaf3a9b80fa4.png" class="card-img-bottom" alt="...">
     <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
     <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
   </div>
-  <img src="http://cheappanel.mohatron.com/src/volume/products/1/a55f6be79878b5e34ef5aaf3a9b80fa4.png" class="card-img-bottom" alt="...">
 </div>
 
 
