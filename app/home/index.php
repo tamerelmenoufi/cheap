@@ -38,6 +38,7 @@
 <div class="barra_topo"></div>
 <div class="home_corpo">
     <h1><i class="fa fa-users"></i> Conteúdo</h1>
+    <div class="banner"></div>
 </div>
 <div class="home_rodape"></div>
 
@@ -66,6 +67,13 @@ $(function(){
         },  
         success:function(dados){
             $(".barra_topo").append(dados);
+        }
+    });
+
+    $.ajax({
+        url:"home/banner.php",
+        success:function(dados){
+            $(".banner").html(dados);
         }
     });
 
