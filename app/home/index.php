@@ -38,7 +38,6 @@
         margin:0;
         padding:0;
         width:100%;
-        border:solid 1px red;
     }
 </style>
 <div class="barra_topo"></div>
