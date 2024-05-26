@@ -79,13 +79,13 @@ include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
         </div>
     
         <div navegacao="pedido/resumo.php" class="telaPedido">
-            <i class="fa-solid fa-bag-shopping" <?=(($pdAtiva == 'pedido/resumo.php')?'style="color:#ffdb37;"':false)?>></i>
+            <i class="fa-regular fa-heart" <?=(($pdAtiva == 'pedido/resumo.php')?'style="color:#ffdb37;"':false)?>></i>
             <p <?=(($pdAtiva == 'pedido/resumo.php')?'style="color:#ffdb37;"':false)?>>Favorito</p>
             <span class="itens_produtos_add"><?=$qt_pedidos?></span>
         </div>        
 
         <div navegacao="pedido/pagar.php">
-            <i class="fa-solid fa-circle-dollar-to-slot" <?=(($pdAtiva == 'pedido/pagar.php')?'style="color:#ffdb37;"':false)?>></i>
+            <i class="fa-solid fa-magnifying-glass" <?=(($pdAtiva == 'pedido/pagar.php')?'style="color:#ffdb37;"':false)?>></i>
             <p <?=(($pdAtiva == 'pedido/pagar.php')?'style="color:#ffdb37;"':false)?>>Busca</p>
         </div> 
         
