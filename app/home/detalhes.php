@@ -48,7 +48,7 @@
         <div class="card-body">
             <div class="alert alert-secondary p-0" role="alert">
                 <div class="d-flex justify-content-between align-items-center">
-                    <p class="card-text"><small class="text-body-secondary"><?=dataBr($d->end_date)?></small></p>
+                    <small class="text-body-secondary" style="font-size:12px; color:#a1a1a1;"><?=dataBr($d->end_date)?></small>
                     <i class="fa fa-users ms-3"></i>
                     <i class="fa fa-user ms-3"></i>
                 </div>
