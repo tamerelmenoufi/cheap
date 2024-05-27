@@ -111,7 +111,7 @@
                     <img 
                         src="<?=$localPainel?>src/volume/products/<?="{$d->id}/{$arquivo}"?>" 
                         class="img-fluid foto" 
-                        registo="<?=$d->id?>" 
+                        registro="<?=$d->id?>" 
                         imagem="ancora-<?=md5($arquivo)?>"
                     >
                 </div>
