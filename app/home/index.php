@@ -53,7 +53,7 @@
         font-size:14px;
     }
     .acao:hover{
-        font-size:15px;
+        font-size:16px;
     }
 </style>
 <div class="barra_topo"></div>
