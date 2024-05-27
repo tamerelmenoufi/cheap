@@ -6,7 +6,7 @@
     }
 
     if($_POST['acao'] == 'atualizar'){
-        mysqli_query($con, "update clientes set {$_POST['campo']} = '".addslashes($_POST['valor'])."' where codigo = '{$_POST['codigo']}'");
+        mysqli_query($con, "update customers set {$_POST['campo']} = '".addslashes($_POST['valor'])."' where id = '{$_POST['id']}'");
         $retorno = [
             'status' => 'success',
             'idUnico' => $_SESSION['idUnico'],
@@ -15,20 +15,20 @@
         exit();
     }
 
-    if($_POST['telefone']){
-        $telefone = str_replace(['-',' ','(',')'],false,trim($_POST['telefone']));
-        if(strlen($telefone) != 11){
-            echo 'erro';
-            exit();
-        }else{
-            $q = "SELECT * from clientes WHERE telefone = '{$_POST['telefone']}'";
-            $c = mysqli_fetch_object(mysqli_query($con, $q));
-            if($c->codigo){
-            }else{
-                mysqli_query($con, "INSERT INTO clientes set telefone = '{$_POST['telefone']}'");
-            }
-        }
-    }
+    // if($_POST['telefone']){
+    //     $telefone = str_replace(['-',' ','(',')'],false,trim($_POST['telefone']));
+    //     if(strlen($telefone) != 11){
+    //         echo 'erro';
+    //         exit();
+    //     }else{
+    //         $q = "SELECT * from customers WHERE telefone = '{$_POST['telefone']}'";
+    //         $c = mysqli_fetch_object(mysqli_query($con, $q));
+    //         if($c->codigo){
+    //         }else{
+    //             mysqli_query($con, "INSERT INTO customers set telefone = '{$_POST['telefone']}'");
+    //         }
+    //     }
+    // }
 
 
 ?>
@@ -37,16 +37,12 @@
     <div class="card p-2">
         <h4 class="w-100 text-center">DADOS PESSOAIS</h4>
         <div class="mb-1">
-            <label for="nome" class="form-label">Nome Completo</label>
-            <input type="text" class="form-control formDados" autocomplete="off" value="<?=$d->nome?>" id="nome">
+            <label for="name" class="form-label">Nome Completo</label>
+            <input type="text" class="form-control formDados" autocomplete="off" value="<?=$d->name?>" id="name">
         </div>
         <div class="mb-1">
-            <label for="cpf" class="form-label">CPF</label>
-            <input type="text" class="form-control formDados" autocomplete="off" value="<?=$d->cpf?>" id="cpf">
-        </div>
-        <div class="mb-1">
-            <label class="form-label">Telefone</label>
-            <div class="form-control is-valid" ><?=$d->telefone?></div>
+            <label for="phone" class="form-label">Phone</label>
+            <input type="text" class="form-control formDados" autocomplete="off" value="<?=$d->phone?>" id="phone">
         </div>
         <div>
             <label for="email" class="form-label">E-mail</label>
@@ -71,7 +67,7 @@
                 data:{
                     campo,
                     valor,
-                    codigo:'<?=$d->codigo?>',
+                    id:'<?=$d->id?>',
                     acao:'atualizar'
                 },
                 success:function(dados){
@@ -80,10 +76,10 @@
             })            
         }
 
-        $(".formDados").keydown(function(){
-            $(this).addClass("is-invalid")
-            $(this).removeClass("is-valid")
-        })
+        // $(".formDados").keydown(function(){
+        //     $(this).addClass("is-invalid")
+        //     $(this).removeClass("is-valid")
+        // })
 
         $(".formDados").blur(function(){
             campo = $(this).attr("id");
@@ -108,18 +104,18 @@
         })
 
 
-        idUnico = localStorage.getItem("idUnico");
+        // idUnico = localStorage.getItem("idUnico");
 
-        $.ajax({
-            url:"enderecos/lista_enderecos.php",
-            type:"POST",
-            data:{
-                idUnico
-            },
-            success:function(dados){
-                $(".dados_enderecos").html(dados);
-            }
-        })  
+        // $.ajax({
+        //     url:"enderecos/lista_enderecos.php",
+        //     type:"POST",
+        //     data:{
+        //         idUnico
+        //     },
+        //     success:function(dados){
+        //         $(".dados_enderecos").html(dados);
+        //     }
+        // })  
 
     })
 </script>

@@ -86,10 +86,9 @@ $(function(){
         }
     });
 
-    idUnico = localStorage.getItem("idUnico");
-
     $.ajax({
-        url:"usuarios/principal.php",
+        // url:"usuarios/principal.php",
+        url:"usuarios/dados.php",
         type:"POST",
         data:{
             idUnico,
