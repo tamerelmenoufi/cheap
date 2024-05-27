@@ -204,7 +204,7 @@ $(function(){
         }
     });
 
-    $("i[favorito]").click(function(){
+    $("i[favorito]").on("click", function(){
         favorite = $(this).attr("favorito");
         codigo = $(this).attr("codigo");
         idUnico = localStorage.getItem("idUnico");

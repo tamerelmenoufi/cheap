@@ -11,6 +11,7 @@
     
 <?php
     $query = "select a.*, (select id from favorite where product = a.id and customer = '{$_SESSION['idUnico']}') as `like` from products a where a.id = '{$_POST['registro']}'";
+    $query = "select a.*, (select id from favorite where product = a.id and customer = (select id from customers where device = '{$_SESSION['idUnico']}')) as opclike from products a";
     $result = mysqli_query($con, $query);
     while($d = mysqli_fetch_object($result)){
 ?>
@@ -49,8 +50,14 @@
             <div class="alert alert-secondary p-2" role="alert">
                 <div class="d-flex justify-content-between align-items-center">
                     <small class="text-body-secondary" style="font-size:12px; color:#a1a1a1;"><?=dataBr($d->end_date)?></small>
-                    <i class="fa-regular fa-heart"></i>
-                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    <i 
+                        opc<?=$d->id?> 
+                        codigo="<?=$d->id?>" 
+                        favorito="<?=(($d->opclike)?:$d->id)?>" 
+                        class="fa-<?=(($d->opclike)?'solid':'regular')?> fa-heart acao text-danger"
+                        acao = <?=(($d->opclike)?'solid':'regular')?>
+                    ></i>
+                    <i url="<?=$d->url?>" class="fa-solid fa-arrow-up-right-from-square acao"></i>
                 </div>
             </div>
         </div>
