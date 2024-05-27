@@ -83,7 +83,7 @@
 
 <?php
     $query = "select * from products ";
-    $query = "select a.*, (select id from favorite where product = a.id and device = '{$_SESSION['idUnico']}') as like from products a";
+    echo $query = "select a.*, (select id from favorite where product = a.id and device = '{$_SESSION['idUnico']}') as like from products a";
     $result = mysqli_query($con, $query);
     while($d = mysqli_fetch_object($result)){
 ?>
