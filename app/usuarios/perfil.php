@@ -2,15 +2,11 @@
     $app = true;
     include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
 
-    if($_POST['codUsr']){
-        $_SESSION['codUsr'] = $_POST['codUsr'];
-    }
+
     if($_POST['idUnico']){
         $_SESSION['idUnico'] = $_POST['idUnico'];
     }
-    // $query = "select * from clientes where codigo = '{$_SESSION['codUsr']}'";
-    // $result = mysqli_query($con, $query);
-    // $d = mysqli_fetch_object($result);
+
 
 ?>
 <style>
@@ -71,7 +67,6 @@
 $(function(){
 
     idUnico = localStorage.getItem("idUnico");
-    codUsr = localStorage.getItem("codUsr");
 
     $.ajax({
         url:"rodape/rodape.php",
@@ -85,7 +80,6 @@ $(function(){
         type:"POST",
         data:{
             idUnico,
-            codUsr
         },  
         success:function(dados){
             $(".barra_topo").append(dados);
@@ -93,14 +87,12 @@ $(function(){
     });
 
     idUnico = localStorage.getItem("idUnico");
-    codUsr = localStorage.getItem("codUsr");
 
     $.ajax({
         url:"usuarios/principal.php",
         type:"POST",
         data:{
             idUnico,
-            codUsr
         },
         success:function(dados){
             $(".dados_pessoais").html(dados);
@@ -117,7 +109,6 @@ $(function(){
                     text:"Sim",
                     btnClass:'btn-danger',
                     action:function(){
-                        localStorage.removeItem("codUsr");
                         window.location.href='./?s=1';
                     }
                 },
