@@ -15,7 +15,7 @@
     }
 
     if($_POST['acao'] == 'solid'){
-        $query = "delete from favorite where id = '{$_POST['favorite']}'";
+        $query = "delete from favorite where product = '{$_POST['favorite']}' and customer = (select id from customers where device = '{$_SESSION['idUnico']}'";
         mysqli_query($con, $query);
         echo 'regular';
         exit();
