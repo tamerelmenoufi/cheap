@@ -10,7 +10,7 @@
 
     
 <?php
-    echo $query = "select * from products where id = '{$_POST['registro']}'";
+    $query = "select * from products where id = '{$_POST['registro']}'";
     $result = mysqli_query($con, $query);
     while($d = mysqli_fetch_object($result)){
 ?>
