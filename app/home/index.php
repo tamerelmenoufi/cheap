@@ -166,7 +166,7 @@
                     favorito="<?=(($d->opclike)?:$d->id)?>" 
                     class="fa-<?=(($d->opclike)?'solid':'regular')?> fa-heart acao text-danger"
                     acao = <?=(($d->opclike)?'solid':'regular')?>
-                ></i> <?=$d->opclike?>
+                ></i>
                 <i url="<?=$d->url?>" class="fa-solid fa-arrow-up-right-from-square acao"></i>
             </div>
         </div>
