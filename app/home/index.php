@@ -83,7 +83,7 @@
 
 <?php
     $query = "select * from products ";
-    echo $query = "select a.*, (select id from favorite where product = a.id and customer = '{$_SESSION['idUnico']}') as `like` from products a";
+    $query = "select a.*, (select id from favorite where product = a.id and customer = '{$_SESSION['idUnico']}') as opclike from products a";
     $result = mysqli_query($con, $query);
     while($d = mysqli_fetch_object($result)){
 ?>
@@ -162,10 +162,10 @@
                 <i 
                     opc<?=$d->id?> 
                     codigo="<?=$d->id?>" 
-                    favorito="<?=(($d->like)?:$d->id)?>" 
-                    class="fa-<?=(($d->like)?'solid':'regular')?> fa-heart acao text-danger"
-                    acao = <?=(($d->like)?'solid':'regular')?>
-                ></i> <?=$d->like?>
+                    favorito="<?=(($d->opclike)?:$d->id)?>" 
+                    class="fa-<?=(($d->opclike)?'solid':'regular')?> fa-heart acao text-danger"
+                    acao = <?=(($d->opclike)?'solid':'regular')?>
+                ></i> <?=$d->opclike?>
                 <i url="<?=$d->url?>" class="fa-solid fa-arrow-up-right-from-square acao"></i>
             </div>
         </div>
