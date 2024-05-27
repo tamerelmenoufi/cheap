@@ -10,7 +10,7 @@
 
     
 <?php
-    $query = "select * from products where id = '{$_POST['registro']}'";
+    $query = "select a.*, (select id from favorite where product = a.id and device = '{$_SESSION['idUnico']}') as like from products a where a.id = '{$_POST['registro']}'";
     $result = mysqli_query($con, $query);
     while($d = mysqli_fetch_object($result)){
 ?>
