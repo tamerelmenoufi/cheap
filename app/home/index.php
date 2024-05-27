@@ -92,8 +92,10 @@
                     if($p == 5){
         ?>
             <div class="col-<?=$c?>">
-                <div class="d-flex justify-content-center align-items-center" style="border:solid 1px red; height:100%; border-radius:5px; background-color:#eee">
-                    <h1>+ <?=($n - 5)?></h1>
+                <div class="m-3">
+                    <div class="d-flex justify-content-center align-items-center" style="height:100%; border-radius:5px; background-color:#eee">
+                        <h1>+ <?=($n - 5)?></h1>
+                    </div>
                 </div>
             </div>
         <?php
