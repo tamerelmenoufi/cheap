@@ -32,7 +32,7 @@
                 <div class="m-3">
                     <img 
                         src="<?=$localPainel?>src/volume/products/<?="{$d->id}/{$arquivo}"?>" 
-                        class="img-fluid foto" 
+                        class="img-fluid" 
                     >
                 </div>
             </div>
@@ -61,7 +61,7 @@
 $(function(){
     Carregando('none');
 
-    
+
 })
 
 	
