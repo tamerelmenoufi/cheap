@@ -30,6 +30,10 @@
     //     }
     // }
 
+    $query = "select * from customers where device = '{$_SESSION['idUnico']}'";
+    $result = mysqli_query($con, $query);
+    $d = mysqli_fetch_object($result);
+
 
 ?>
 
@@ -56,8 +60,6 @@
     $(function(){
 
         $(".desconectar").css("display","block");
-
-        $("#cpf").mask("999.999.999-99");
 
         ExecutaAtualizacao = (campo, valor)=>{
             $.ajax({
@@ -86,16 +88,14 @@
             valor = $(this).val();
             console.log(campo)
             console.log(valor)
-            if(campo == 'nome'){
+            if(campo == 'name'){
                 ExecutaAtualizacao(campo, valor);
                 $(this).removeClass("is-invalid")
                 $(this).addClass("is-valid")
-            }else if(campo == 'cpf'){
-                if(valor.length == 14){
-                    ExecutaAtualizacao(campo, valor);
-                    $(this).removeClass("is-invalid")
-                    $(this).addClass("is-valid")
-                }
+            }else if(campo == 'phone'){
+                ExecutaAtualizacao(campo, valor);
+                $(this).removeClass("is-invalid")
+                $(this).addClass("is-valid")
             }else if(campo == 'email'){
                 ExecutaAtualizacao(campo, valor);
                 $(this).removeClass("is-invalid")
