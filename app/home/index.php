@@ -125,12 +125,16 @@
             }
         ?>
     </div>
-
-    <!-- <img src="http://cheappanel.mohatron.com/src/volume/products/1/a55f6be79878b5e34ef5aaf3a9b80fa4.png" class="card-img-bottom" alt="..."> -->
     <div class="card-body">
-        <p class="card-text"><?=$d->description?></p>
-        <p class="card-text"><small class="text-body-secondary"><?=dataBr($d->end_date)?></small></p>
-    </div>
+            <div class="alert alert-secondary p-2" role="alert">
+                <div class="d-flex justify-content-between align-items-center">
+                    <small class="text-body-secondary" style="font-size:12px; color:#a1a1a1;"><?=dataBr($d->end_date)?></small>
+                    <i class="fa-regular fa-heart"></i>
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </div>
+            </div>
+            <p class="card-text"><?=$d->description?></p>
+        </div>
     </div>    
 <?php
     }

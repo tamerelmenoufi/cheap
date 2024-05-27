@@ -44,7 +44,6 @@
             ?>
         </div>
 
-        <!-- <img src="http://cheappanel.mohatron.com/src/volume/products/1/a55f6be79878b5e34ef5aaf3a9b80fa4.png" class="card-img-bottom" alt="..."> -->
         <div class="card-body">
             <div class="alert alert-secondary p-2" role="alert">
                 <div class="d-flex justify-content-between align-items-center">
