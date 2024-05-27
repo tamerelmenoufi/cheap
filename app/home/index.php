@@ -83,7 +83,7 @@
 
 <?php
     $query = "select * from products ";
-    echo $query = "select a.*, (select id from favorite where product = a.id and customer = '{$_SESSION['idUnico']}') as opclike from products a";
+    echo $query = "select a.*, (select id from favorite where product = a.id and customer = (select id from customers where device = '{$_SESSION['idUnico']}')) as opclike from products a";
     $result = mysqli_query($con, $query);
     while($d = mysqli_fetch_object($result)){
 ?>
@@ -96,6 +96,7 @@
         <?php
             $path = "{$_SERVER['DOCUMENT_ROOT']}/painel/src/volume/products/{$d->id}/";
             if(is_dir($path)){
+
             $diretorio = dir($path);
             
             // Lista todos os arquivos e diretórios
