@@ -92,8 +92,13 @@
                     if($p == 5){
         ?>
             <div class="col-<?=$c?>">
-                <div class="m-3" style="height:100%;">
-                    <div class="d-flex justify-content-center align-items-center" style="height:100%; border-radius:5px; background-color:#eee">
+                <div class="m-3 foto"  style="height:100%;">
+                    <div 
+                        class="d-flex justify-content-center align-items-center" 
+                        style="height:100%; border-radius:5px; background-color:#eee"
+                        registro=""
+                        imagem=""
+                    >
                         <h1>+ <?=($n - 5)?></h1>
                     </div>
                 </div>
@@ -107,7 +112,7 @@
                         src="<?=$localPainel?>src/volume/products/<?="{$d->id}/{$arquivo}"?>" 
                         class="img-fluid foto" 
                         registo="<?=$d->id?>" 
-                        imagem="<?=$arquivo?>"
+                        imagem="ancora-<?=md5($arquivo)?>"
                     >
                 </div>
             </div>
@@ -170,7 +175,23 @@ $(function(){
     // });
 
     $(".foto").click(function(){
-        $(".popupArea").css("display","flex");
+
+        registro = $(this).attr("registro");
+        imagem = $(this).attr("imagem");
+        
+        Carregando();
+        $.ajax({
+            url:"home/detalhes.php",
+            type:"POST",
+            data:{
+                registro,
+                imagem
+            },
+            success:function(dados){
+                $(".popupArea").append(dados);
+                $(".popupArea").css("display","flex");
+            }
+        });
     })
 
 
