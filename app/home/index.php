@@ -219,8 +219,8 @@ $(function(){
                 // imagem
             },
             success:function(dados){
-                $(`i[opc${codigo}]`).removeClass(acao);
-                $(`i[opc${codigo}]`).addClass(dados);
+                $(`i[opc${codigo}]`).removeClass(`fa-${acao}`);
+                $(`i[opc${codigo}]`).addClass(`fa-${dados}`);
                 $(`i[opc${codigo}]`).attr("acao", dados);
             }
         });        
