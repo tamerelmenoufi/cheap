@@ -2,11 +2,12 @@
     include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
     $idUnico = uniqid();
     if($_GET['s']) {
-        mysqli_query($con, "update vendas_tmp set cliente = '' where id_unico = '{$_SESSION['idUnico']}'");
         $_SESSION = [];
         header("location:./");
         exit();
     }
+
+
     // $_SESSION['historico'] = [];
     // $_SESSION['historico'][0]['local'] = 'home/index.php';
     // $_SESSION['historico'][0]['destino'] = '.CorpoApp';

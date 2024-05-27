@@ -1,6 +1,27 @@
 <?php
     $app = true;
     include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
+
+
+    if($_POST['idUnico']){
+        $_SESSION['idUnico'] = $_POST['idUnico'];
+    }
+
+    if($_POST['acao'] == 'regular'){
+        $query = "insert into favorite set product = '{$_POST['favorite']}', customer = (select id from customers where device = '{$_SESSION['idUnico']}')";
+        mysqli_query($con, $query);
+        echo 'solid';
+        exit();
+    }
+
+    if($_POST['acao'] == 'solid'){
+        $query = "delete from favorite where id = '{$_POST['favorite']}'";
+        mysqli_query($con, $query);
+        echo 'regular';
+        exit();
+    }
+
+
 ?>
 <style>
     .barra_topo{
@@ -62,6 +83,7 @@
 
 <?php
     $query = "select * from products ";
+    $query = "select a.*, (select id from favorite where product = a.id and device = '{$_SESSION['idUnico']}') as like from products a where a.id = '{$_POST['registro']}'";
     $result = mysqli_query($con, $query);
     while($d = mysqli_fetch_object($result)){
 ?>
@@ -137,7 +159,13 @@
         <div class="alert alert-secondary p-2" role="alert">
             <div class="d-flex justify-content-between align-items-center">
                 <small class="text-body-secondary" style="font-size:12px; color:#a1a1a1;"><?=dataBr($d->end_date)?></small>
-                <i favorito="<?=$d->id?>" class="fa-regular fa-heart acao text-danger"></i>
+                <i 
+                    opc<?=$d->id?> 
+                    codigo="<?=$d->id?>" 
+                    favorito="<?=(($d->like)?:$d->id)?>" 
+                    class="fa-<?=(($d->like)?'solid':'regular')?> fa-heart acao text-danger"
+                    acao = <?=(($d->like)?'solid':'regular')?>
+                ></i>
                 <i url="<?=$d->url?>" class="fa-solid fa-arrow-up-right-from-square acao"></i>
             </div>
         </div>
@@ -176,12 +204,27 @@ $(function(){
         }
     });
 
-    // $.ajax({
-    //     url:"home/banner.php",
-    //     success:function(dados){
-    //         $(".banner").html(dados);
-    //     }
-    // });
+    $("i[favorito]").click(function(){
+        favorite = $(this).attr("favorito");
+        codigo = $(this).attr("codigo");
+        idUnico = localStorage.getItem("idUnico");
+        acao = $(this).attr("acao");
+        $.ajax({
+            url:`home/index.php`,
+            type:"POST",
+            data:{
+                favorite,
+                idUnico,
+                acao
+                // imagem
+            },
+            success:function(dados){
+                $(`i[opc${codigo}]`).removeClass(acao);
+                $(`i[opc${codigo}]`).addClass(dados);
+                $(`i[opc${codigo}]`).attr("acao", dados);
+            }
+        });        
+    })
 
     $(".foto").click(function(){
 
