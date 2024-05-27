@@ -52,7 +52,7 @@
         cursor:pointer;
         font-size:14px;
     }
-    .acao:hover{
+    i[favorito]:hover{
         font-size:16px;
     }
 </style>
