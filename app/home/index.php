@@ -178,14 +178,13 @@ $(function(){
 
         registro = $(this).attr("registro");
         imagem = $(this).attr("imagem");
-        console.log(registro);
         Carregando();
         $.ajax({
-            url:"home/detalhes.php",
+            url:`home/detalhes.php#${imagem}`,
             type:"POST",
             data:{
                 registro,
-                imagem
+                // imagem
             },
             success:function(dados){
                 $(".popupPalco").html(dados);
