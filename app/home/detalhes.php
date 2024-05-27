@@ -61,21 +61,7 @@
 $(function(){
     Carregando('none');
 
-
-    $(document).ready(function() {
-        // Verifica se a URL tem um hash e se o elemento correspondente existe
-        if (window.location.hash) {
-            var target = $(window.location.hash);
-            if (target.length) {
-                // Faz a rolagem suave até o elemento
-                $('.popupArea').animate({
-                    scrollTop: target.offset().top
-                }, 1000); // 1000ms para rolagem suave (ajustável)
-            }
-        }
-    });
-
-
+    
 })
 
 	
