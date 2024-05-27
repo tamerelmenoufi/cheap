@@ -52,8 +52,8 @@
                     <i class="fa fa-users ms-3"></i>
                     <i class="fa fa-user ms-3"></i>
                 </div>
-                <p class="card-text"><?=$d->description?></p>
             </div>
+            <p class="card-text"><?=$d->description?></p>
         </div>
     </div>    
 <?php
