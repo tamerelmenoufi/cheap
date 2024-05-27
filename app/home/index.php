@@ -137,7 +137,7 @@
         <div class="alert alert-secondary p-2" role="alert">
             <div class="d-flex justify-content-between align-items-center">
                 <small class="text-body-secondary" style="font-size:12px; color:#a1a1a1;"><?=dataBr($d->end_date)?></small>
-                <i favorito="<?=$d->id?>" class="fa-regular fa-heart acao"></i>
+                <i favorito="<?=$d->id?>" class="fa-regular fa-heart acao text-danger"></i>
                 <i url="<?=$d->url?>" class="fa-solid fa-arrow-up-right-from-square acao"></i>
             </div>
         </div>
