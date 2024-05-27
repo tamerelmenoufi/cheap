@@ -92,7 +92,7 @@
                     if($p == 5){
         ?>
             <div class="col-<?=$c?>">
-                <div class="d-flex justify-content-center align-items-center">
+                <div class="d-flex justify-content-center align-items-center" style="border:solid 1px red">
                     <h1>+ <?=($n - 5)?></h1>
                 </div>
             </div>
