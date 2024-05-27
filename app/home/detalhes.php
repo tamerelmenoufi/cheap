@@ -46,7 +46,12 @@
 
     <!-- <img src="http://cheappanel.mohatron.com/src/volume/products/1/a55f6be79878b5e34ef5aaf3a9b80fa4.png" class="card-img-bottom" alt="..."> -->
     <div class="card-body">
-        <p class="card-text"><?=$d->description?></p>
+        <div class="d-flex flex-content-right flex-item-center">
+            <p class="card-text"><?=$d->description?></p>
+            <i class="fa fa-users ms-3"></i>
+            <i class="fa fa-user ms-3"></i>
+        </div>
+        
         <p class="card-text"><small class="text-body-secondary"><?=dataBr($d->end_date)?></small></p>
     </div>
     </div>    
