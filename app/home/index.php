@@ -162,7 +162,7 @@
                 <i 
                     opc<?=$d->id?> 
                     codigo="<?=$d->id?>" 
-                    favorito="<?=(($d->opclike)?:$d->id)?>" 
+                    favorito="<?=$d->id?>" 
                     class="fa-<?=(($d->opclike)?'solid':'regular')?> fa-heart acao text-danger"
                     acao = <?=(($d->opclike)?'solid':'regular')?>
                 ></i>
