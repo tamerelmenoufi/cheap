@@ -9,7 +9,6 @@
 </style>
 
     
-
 <?php
     echo $query = "select * from products where id = '{$_POST['registro']}'";
     $result = mysqli_query($con, $query);
