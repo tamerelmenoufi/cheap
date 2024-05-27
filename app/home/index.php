@@ -48,6 +48,13 @@
     .foto:hover{
         border:solid 1px #ccc;
     }
+    .acao{
+        cursor:pointer;
+        font-size:14px;
+    }
+    .acao:hover{
+        font-size:15px;
+    }
 </style>
 <div class="barra_topo"></div>
 <div class="home_corpo">
@@ -130,8 +137,8 @@
         <div class="alert alert-secondary p-2" role="alert">
             <div class="d-flex justify-content-between align-items-center">
                 <small class="text-body-secondary" style="font-size:12px; color:#a1a1a1;"><?=dataBr($d->end_date)?></small>
-                <i class="fa-regular fa-heart"></i>
-                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                <i favorito="<?=$d->id?>" class="fa-regular fa-heart acao"></i>
+                <i url="<?=$d->url?>" class="fa-solid fa-arrow-up-right-from-square acao"></i>
             </div>
         </div>
     </div>
