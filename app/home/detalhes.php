@@ -64,7 +64,7 @@ $(function(){
     if($_POST['imagem']){
     ?>
         $('.popupArea').animate({
-            scrollTop: $("#<?=$_POST['imagem']?>").offset().top
+            scrollTop: $("#<?=$_POST['imagem']?>").offset().top()
         }, 1000); // 1000ms para rolagem suave (ajustável)
     <?php
     }
