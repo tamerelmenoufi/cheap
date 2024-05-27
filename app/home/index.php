@@ -188,7 +188,7 @@ $(function(){
                 imagem
             },
             success:function(dados){
-                $(".popupArea").append(dados);
+                $(".popupArea").html(dados);
                 $(".popupArea").css("display","flex");
             }
         });
