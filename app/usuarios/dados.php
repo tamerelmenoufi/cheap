@@ -5,17 +5,11 @@
         $_SESSION['idUnico'] = $_POST['idUnico'];
     }
 
-    if($_POST['codUsr']){
-        $_SESSION['codUsr'] = $_POST['codUsr'];
-        $where = " where codigo = '{$_SESSION['codUsr']}'";
-    }
-
     if($_POST['acao'] == 'atualizar'){
         mysqli_query($con, "update clientes set {$_POST['campo']} = '".addslashes($_POST['valor'])."' where codigo = '{$_POST['codigo']}'");
         $retorno = [
             'status' => 'success',
             'idUnico' => $_SESSION['idUnico'],
-            'codUsr' => $_SESSION['codUsr'],
         ];
         echo json_encode($retorno);
         exit();
@@ -24,29 +18,18 @@
     if($_POST['telefone']){
         $telefone = str_replace(['-',' ','(',')'],false,trim($_POST['telefone']));
         if(strlen($telefone) != 11){
-            $_SESSION['codUsr'] = false;
             echo 'erro';
             exit();
         }else{
             $q = "SELECT * from clientes WHERE telefone = '{$_POST['telefone']}'";
             $c = mysqli_fetch_object(mysqli_query($con, $q));
             if($c->codigo){
-                $_SESSION['codUsr'] = $c->codigo;
             }else{
                 mysqli_query($con, "INSERT INTO clientes set telefone = '{$_POST['telefone']}'");
-                $_SESSION['codUsr'] = mysqli_insert_id($con);
             }
-            mysqli_query($con, "update vendas_tmp set cliente = '{$_SESSION['codUsr']}' where id_unico = '{$_SESSION['idUnico']}'");
         }
     }
 
-    // $query = "select * from clientes where codigo = '{$_SESSION['codUsr']}'";
-    // $result = mysqli_query($con, $query);
-    // $d = mysqli_fetch_object($result);
-
-    $_SESSION['codUsr'] = $d->codigo;
-    ////////////////
-    //98542-2529
 
 ?>
 
@@ -79,8 +62,6 @@
         $(".desconectar").css("display","block");
 
         $("#cpf").mask("999.999.999-99");
-
-        localStorage.setItem("codUsr", '<?=$_SESSION['codUsr']?>');
 
         ExecutaAtualizacao = (campo, valor)=>{
             $.ajax({
@@ -128,13 +109,11 @@
 
 
         idUnico = localStorage.getItem("idUnico");
-        codUsr = localStorage.getItem("codUsr");
 
         $.ajax({
             url:"enderecos/lista_enderecos.php",
             type:"POST",
             data:{
-                codUsr,
                 idUnico
             },
             success:function(dados){

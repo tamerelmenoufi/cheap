@@ -5,13 +5,7 @@
     if($_POST['idUnico']){
         $_SESSION['idUnico'] = $_POST['idUnico'];
     }
-    if($_POST['codUsr']){
-        $_SESSION['codUsr'] = $_POST['codUsr'];
-    }
 
-    // $query = "select * from clientes where codigo = '{$_SESSION['codUsr']}'";
-    // $result = mysqli_query($con, $query);
-    // $d = mysqli_fetch_object($result);
 ?>
 <style>
 
@@ -169,14 +163,12 @@ $(function(){
     }else{
 ?>
     idUnico = localStorage.getItem("idUnico");
-    codUsr = localStorage.getItem("codUsr");
 
     $.ajax({
         url:"usuarios/dados.php",
         type:"POST",
         data:{
             idUnico,
-            codUsr
         },
         success:function(dados){
             $(".dados_pessoais").html(dados);

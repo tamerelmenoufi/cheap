@@ -149,7 +149,6 @@ $(function(){
 
 
     idUnico = localStorage.getItem("idUnico");
-    codUsr = localStorage.getItem("codUsr");
 
     
     $.ajax({
@@ -164,7 +163,6 @@ $(function(){
         type:"POST",
         data:{
             idUnico,
-            codUsr
         },  
         success:function(dados){
             $(".barra_topo").append(dados);
