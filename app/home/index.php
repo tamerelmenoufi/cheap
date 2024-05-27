@@ -178,7 +178,7 @@ $(function(){
 
         registro = $(this).attr("registro");
         imagem = $(this).attr("imagem");
-        
+        console.log(registro);
         Carregando();
         $.ajax({
             url:"home/detalhes.php",
