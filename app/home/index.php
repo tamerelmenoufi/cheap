@@ -58,7 +58,7 @@
     $result = mysqli_query($con, $query);
     while($d = mysqli_fetch_object($result)){
 ?>
-    <div class="card m-3 nb-0">
+    <div class="card m-3 mb-0">
     <div class="card-body">
         <h5 class="card-title"><?=$d->name?></h5>
     </div>
@@ -125,7 +125,7 @@
             }
         ?>
     </div>
-    <div class="card-body">
+    <div class="card-body mt-0">
             <div class="alert alert-secondary p-2" role="alert">
                 <div class="d-flex justify-content-between align-items-center">
                     <small class="text-body-secondary" style="font-size:12px; color:#a1a1a1;"><?=dataBr($d->end_date)?></small>
