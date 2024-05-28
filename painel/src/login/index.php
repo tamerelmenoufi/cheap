@@ -179,7 +179,7 @@
                     <input type="checkbox" value="remember-me"> <?=$Dic['Always keep me connected']?>
                 </label>
             </div>
-            <button id="Access" class="btn btn-lg btn-warning btn-block btn-signinXX" type="submit"><?=$Dic['Enter']?></button>
+            <button id="Access" class="btn btn-lg btn-danger btn-block btn-signinXX" type="submit"><?=$Dic['Enter']?></button>
 
             <!-- <div class="form-signin">
                 <span id="reauth-email" class="reauth-email"></span>
