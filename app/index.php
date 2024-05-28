@@ -8,6 +8,7 @@
     }
 
 
+
     // $_SESSION['historico'] = [];
     // $_SESSION['historico'][0]['local'] = 'home/index.php';
     // $_SESSION['historico'][0]['destino'] = '.CorpoApp';
@@ -128,7 +129,9 @@
                     <i class="fa-solid fa-check-double"></i> Produto inserido com sucesso!
                 </div>
             </div>
-            
+            <?php
+                print_r($_SESSION['historico']);
+            ?>
             <div class="CorpoApp area"></div>             
         </div>
         <div class="col-4 d-none d-md-block area"></div>
