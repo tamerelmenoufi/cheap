@@ -1,6 +1,9 @@
 <?php
 include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
 
+$i = ((count($_SESSION['historico']))?(count($_SESSION['historico']) - 1):0);
+$pdAtiva = $_SESSION['historico'][$i]['local'];
+
 ?>
 
 <style>
