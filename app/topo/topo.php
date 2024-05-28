@@ -41,7 +41,7 @@ $d = mysqli_fetch_object($result);
     
 </style>
 <div class="topo">
-    <?=$d->name?>
+    <div class="dados"><?=$d->name?></div>
     <i class="voltar fa-solid fa-arrow-left"></i>
 </div>
 <script>
