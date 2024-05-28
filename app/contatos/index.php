@@ -75,7 +75,7 @@
         </div>
         <div class="row mb-1">
             <div class="col">
-                <span style="color:#a1a1a1">Aplicativo desenvolvido pela Mohatron Soluções em Sistema da Informação - <?date("Y")?></span>
+                <span style="color:#a1a1a1">Aplicativo desenvolvido pela Mohatron Soluções em Sistema da Informação - <?=date("Y")?></span>
             </div>
         </div>
     </div>
