@@ -139,7 +139,7 @@
                     }else{
         ?>
             <div class="col-<?=$c?>">
-                <div class="m-3">
+                <div class="m-0">
                     <img 
                         src="<?=$localPainel?>src/volume/products/<?="{$d->id}/{$arquivo}"?>" 
                         class="img-fluid foto" 
