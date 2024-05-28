@@ -35,7 +35,7 @@
   <style>
 body {
 
-    background: <?=(($_SESSION['ProjectPainel'])?'#fff':'url(img/fundopncred.jpg)')?>;
+    background: <?=(($_SESSION['ProjectPainel'])?'#fff':'url(img/fundopncred.png)')?>;
     /* no-repeat center fixed: ; */
     background-size: auto auto;
     -webkit-background-size: cover;
