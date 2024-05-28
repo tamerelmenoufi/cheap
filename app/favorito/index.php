@@ -53,7 +53,101 @@
 
 
 <div class="home_corpo">
-    Favorito
+
+<?php
+    $query = "select a.*, (select id from favorite where product = a.id and customer = (select id from customers where device = '{$_SESSION['idUnico']}')) as opclike from products a";
+    $result = mysqli_query($con, $query);
+    while($d = mysqli_fetch_object($result)){
+?>
+    <div class="card m-3 mb-0">
+    <div class="card-body">
+        <h5 class="card-title"><?=$d->name?></h5>
+    </div>
+
+    <div class="row mb-3">
+        <?php
+            $path = "{$_SERVER['DOCUMENT_ROOT']}/painel/src/volume/products/{$d->id}/";
+            if(is_dir($path)){
+
+            $diretorio = dir($path);
+            
+            // Lista todos os arquivos e diretórios
+            $n = scandir($path);
+            // Filtra a lista para remover os diretórios '.' e '..'
+            $n = array_diff($n, array('.', '..'));
+            // Retorna a quantidade de arquivos
+            $n = count($n);
+
+
+            $p=0;
+            while($arquivo = $diretorio -> read()){
+                if(is_file($path.$arquivo) and $p < 6){
+
+                    if($n == 1){
+                        $c = 12;
+                    }elseif($n == 2){
+                        $c = 6;
+                    }else{
+                        $c = 4;
+                    }
+
+                    if($p == 5){
+        ?>
+            <div class="col-<?=$c?>">
+                <div class="m-3 foto"  style="height:100%;">
+                    <div 
+                        class="d-flex justify-content-center align-items-center" 
+                        style="height:100%; border-radius:5px; background-color:#eee"
+                        registro=""
+                        imagem=""
+                    >
+                        <h1>+ <?=($n - 5)?></h1>
+                    </div>
+                </div>
+            </div>
+        <?php
+                    }else{
+        ?>
+            <div class="col-<?=$c?>">
+                <div class="m-3">
+                    <img 
+                        src="<?=$localPainel?>src/volume/products/<?="{$d->id}/{$arquivo}"?>" 
+                        class="img-fluid foto" 
+                        registro="<?=$d->id?>" 
+                        imagem="ancora-<?=md5($arquivo)?>"
+                    >
+                </div>
+            </div>
+        <?php
+                    }
+                $p++;
+                }
+            }
+            $diretorio -> close();
+            }
+        ?>
+    </div>
+    <div class="card-body mt-0">
+        <p class="card-text"><?=$d->description?></p>
+        <div class="alert alert-secondary p-2" role="alert">
+            <div class="d-flex justify-content-between align-items-center">
+                <small class="text-body-secondary" style="font-size:12px; color:#a1a1a1;"><?=dataBr($d->end_date)?></small>
+                <i 
+                    opc<?=$d->id?> 
+                    codigo="<?=$d->id?>" 
+                    favorito="<?=$d->id?>" 
+                    class="fa-<?=(($d->opclike)?'solid':'regular')?> fa-heart acao text-danger"
+                    acao = <?=(($d->opclike)?'solid':'regular')?>
+                ></i>
+                <i url="<?=$d->url?>" class="fa-solid fa-arrow-up-right-from-square acao"></i>
+            </div>
+        </div>
+    </div>
+    </div>    
+<?php
+    }
+?>
+
 </div>   
 <div class="home_rodape"></div>
 
