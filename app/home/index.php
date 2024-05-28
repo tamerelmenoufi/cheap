@@ -65,6 +65,7 @@
         border:solid 1px #eee;
         border-radius:7px;
         min-height:80px;
+        width:100%;
     }
     .foto:hover{
         border:solid 1px #ccc;
@@ -123,7 +124,7 @@
                     if($p == 5){
         ?>
             <div class="col-<?=$c?>">
-                <div class="foto"  style="height:100%;">
+                <div class="foto">
                     <div 
                         class="d-flex justify-content-center align-items-center" 
                         style="height:100%; border-radius:5px; background-color:#eee"
