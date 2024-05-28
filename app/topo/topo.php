@@ -1,5 +1,12 @@
 <?php
 include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
+
+
+
+$query = "select * from customers where device = '{$_SESSION['idUnico']}'";
+$result = mysqli_query($con, $query);
+$d = mysqli_fetch_object($result);
+
 ?>
 
 <style>
@@ -34,6 +41,7 @@ include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
     
 </style>
 <div class="topo">
+    <?=$d->name?>
     <i class="voltar fa-solid fa-arrow-left"></i>
 </div>
 <script>
