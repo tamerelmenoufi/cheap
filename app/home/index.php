@@ -124,12 +124,14 @@
                     if($p == 5){
         ?>
             <div class="col-<?=$c?>">
-                <div class="foto">
+                <div 
+                    class="foto"
+                    registro="<?=$d->id?>"
+                    imagem=""                    
+                >
                     <div 
                         class="d-flex justify-content-center align-items-center" 
                         style="height:100%; border-radius:5px; background-color:#eee"
-                        registro="<?=$d->id?>"
-                        imagem=""
                     >
                         <h1>+ <?=($n - 5)?></h1>
                     </div>
