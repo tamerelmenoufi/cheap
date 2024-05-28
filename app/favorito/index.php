@@ -187,6 +187,25 @@ $(function(){
         }
     });
 
+    $(".foto").click(function(){
+
+        registro = $(this).attr("registro");
+        imagem = $(this).attr("imagem");
+        Carregando();
+        $.ajax({
+            url:`home/detalhes.php#${imagem}`,
+            type:"POST",
+            data:{
+                registro,
+                // imagem
+            },
+            success:function(dados){
+                $(".popupPalco").html(dados);
+                $(".popupArea").css("display","flex");
+            }
+        });
+    })
+
 })
 
 </script>
