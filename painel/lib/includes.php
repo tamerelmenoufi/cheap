@@ -12,8 +12,6 @@
     $md5 = md5(date("YmdHis"));
 
 
-    $_SESSION = ['historico'];
-
      if($_POST['historico']){
          $pagina = str_replace("/app/", false, $_SERVER["PHP_SELF"]);
          $destino = $_POST['historico'];
