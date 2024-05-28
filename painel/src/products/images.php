@@ -61,6 +61,7 @@
                         action:'delImg'
                     },
                     success:function(dados){
+                        console.log(dados);
                         obj.parent("div").remove();
                     }
                 });
