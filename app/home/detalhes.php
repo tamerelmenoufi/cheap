@@ -29,7 +29,7 @@
                     if(is_file($path.$arquivo)){
             ?>
                 <div class="col-12" id=ancora-<?=$arquivo?>>
-                    <div class="m-3">
+                    <div class="mb-1">
                         <img 
                             src="<?=$localPainel?>src/volume/products/<?="{$d->id}/{$arquivo}"?>" 
                             class="img-fluid" 
