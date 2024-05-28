@@ -34,7 +34,7 @@
                     if(is_file($path.$arquivo)){
             ?>
                 <div class="col-md-4" style="position:relative">
-                    <i class="fa fa-trash text-danger" delImg="<?=$arquivo?>" style="position:absolute; right:25px; bottom:30px; z-index:1; cursor: pointer;" ></i>
+                    <i class="fa fa-trash text-danger" delImg="<?=$arquivo?>" style="position:absolute; right:20px; bottom:20px; z-index:1; cursor: pointer;" ></i>
                     <img src="src/volume/products/<?="{$_POST['id']}/{$arquivo}"?>" class="img-fluid mb-1">
                 </div>
             <?php
