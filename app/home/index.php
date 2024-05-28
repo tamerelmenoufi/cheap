@@ -77,7 +77,9 @@
         font-size:16px;
     }
 </style>
-<div class="barra_topo"></div>
+<div class="barra_topo">
+    <h2>Promoções</h2>
+</div>
 <div class="home_corpo">
     
 
