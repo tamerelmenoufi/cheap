@@ -14,7 +14,7 @@
     $result = mysqli_query($con, $query);
     while($d = mysqli_fetch_object($result)){
 ?>
-    <div class="card m-3 nb-0">
+    <div class="card m-1">
         <div class="card-body">
             <h5 class="card-title"><?=$d->name?></h5>
         </div>
