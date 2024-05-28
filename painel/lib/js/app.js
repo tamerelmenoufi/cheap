@@ -41,7 +41,7 @@ Carregando = (opc = 'flex') => {
       hasChanged:function(){
           if (window.location.hash == '#no-back' ){
               window.location.hash = '#back';
-			  //alert('acao1')
+			  console.log('acao1')
               $.ajax({
                 url:"lib/voltar.php",
                 dataType:"JSON",
