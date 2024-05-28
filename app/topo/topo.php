@@ -41,7 +41,7 @@ $d = mysqli_fetch_object($result);
     
 </style>
 <div class="topo">
-    <div class="dados"><?=$d->name?><br><?=$d->email?></div>
+    <div class="dados"><span class="topo-name"><?=$d->name?></span><br><span class="topo-email"><?=$d->email?></span></div>
     <i class="voltar fa-solid fa-arrow-left"></i>
 </div>
 <script>

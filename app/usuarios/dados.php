@@ -74,6 +74,7 @@
                 },
                 success:function(dados){
                     console.log(dados)
+                    $(`.topo-${campo}`).html(valor);
                 }
             })            
         }
@@ -96,6 +97,7 @@
                 ExecutaAtualizacao(campo, valor);
                 $(this).removeClass("is-invalid")
                 $(this).addClass("is-valid")
+
             }else if(campo == 'email'){
                 ExecutaAtualizacao(campo, valor);
                 $(this).removeClass("is-invalid")
