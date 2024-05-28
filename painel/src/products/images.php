@@ -1,6 +1,13 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
 
+    if ($_POST['action'] == 'delImg') {
+
+        if(!is_file("../volume/products/{$_POST['id']}/{$_POST['img']}")) unlink("../volume/products/{$_POST['id']}/{$_POST['img']}");
+        exit();
+
+    }
+
     if ($_POST['action'] == 'saveImage') {
 
         $md52 = md5($md5.$_POST['name'].$_POST['type'].$_POST['base64']);
@@ -17,7 +24,6 @@
         file_put_contents("../volume/products/{$_POST['id']}/{$md52}{$ext}", $img);
 
     }
-
 ?>
         <div class="row mb-3">
             <?php
@@ -27,7 +33,8 @@
                 while($arquivo = $diretorio -> read()){
                     if(is_file($path.$arquivo)){
             ?>
-                <div class="col-md-4">
+                <div class="col-md-4" style="position:relative">
+                    <i class="fa fa-trash text-danger" delImg="<?=$arquivo?>" style="position:absolute; right:20px; bottom:20px; z-index:1; cursor: pointer;" ></i>
                     <img src="src/volume/products/<?="{$_POST['id']}/{$arquivo}"?>" class="img-fluid m-3">
                 </div>
             <?php
@@ -42,10 +49,27 @@
         $(function(){
             Carregando('none');
 
+            $("i[delImg]").click(function(){
+                img = $(this).attr("delImg");
+                obj = $(this);
+                $.ajax({
+                    url:"src/products/images.php",
+                    type:"POST",
+                    data:{
+                        img,
+                        id:'<?=$_POST['id']?>',
+                        action:'delImg'
+                    },
+                    success:function(dados){
+                        obj.parent("div").remove();
+                    }
+                });
+            })
+
             if (window.File && window.FileList && window.FileReader) {
 
                 $('input[type="file"]').change(function () {
-
+                    Carregando();
                     if ($(this).val()) {
                         var files = $(this).prop("files");
                         for (var i = 0; i < files.length; i++) {
@@ -78,7 +102,7 @@
                                         console.log(type)
                                         console.log(name)
                                         if(base64 && type && name){
-                                            Carregando();
+                                            
                                             $.ajax({
                                                 url:"src/products/images.php",
                                                 type:"POST",
@@ -90,7 +114,6 @@
                                                     action:'saveImage'
                                                 },
                                                 success:function(dados){
-                                                    console.log(dados)
 
                                                     $("#divImages").html(dados);
                                                 }
