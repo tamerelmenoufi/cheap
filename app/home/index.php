@@ -64,7 +64,7 @@
         cursor:pointer;
         border:solid 1px #eee;
         border-radius:7px;
-        min-height:80px;
+        height:100%;
         width:100%;
     }
     .foto:hover{
