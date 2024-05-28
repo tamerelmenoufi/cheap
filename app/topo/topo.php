@@ -59,7 +59,7 @@ $d = mysqli_fetch_object($result);
                         type:"POST",
                         data,
                         success:function(retorno){
-                            console.log(retorno)
+                            console.log(dados.tg)
                             $(`${dados.tg}`).html(retorno);
                             Carregando('none');
                         }
