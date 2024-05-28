@@ -71,7 +71,7 @@ include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
 </style>
 <div class="rodape">
     <div class="d-flex justify-content-between align-items-center rodape_area">
-        <img home src="img/logo.png" />
+        <img home src="img/logo.png?n" />
 
         <div navegacao="usuarios/perfil.php" class="telaPedido">
             <i class="fa-solid fa-user" <?=(($pdAtiva == 'usuarios/perfil.php')?'style="color:#ffdb37;"':false)?>></i>
