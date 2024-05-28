@@ -27,6 +27,8 @@ include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
         z-index:10;
     }
     .rodape_area img{
+        position:absolute;
+        left:-50px;
         height:70px;
         width:auto;
         cursor:pointer;
