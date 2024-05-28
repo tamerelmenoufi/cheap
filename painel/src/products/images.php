@@ -52,19 +52,32 @@
             $("i[delImg]").click(function(){
                 img = $(this).attr("delImg");
                 obj = $(this);
-                $.ajax({
-                    url:"src/products/images.php",
-                    type:"POST",
-                    data:{
-                        img,
-                        id:'<?=$_POST['id']?>',
-                        action:'delImg'
-                    },
-                    success:function(dados){
-                        console.log(dados);
-                        obj.parent("div").remove();
+                $.confirm({
+                    title:"Excluir a Imagem",
+                    content: "Deseja realmente excluir a imagem?",
+                    type:"red",
+                    buttons:{
+                        'Sim':function(){
+                            $.ajax({
+                                url:"src/products/images.php",
+                                type:"POST",
+                                data:{
+                                    img,
+                                    id:'<?=$_POST['id']?>',
+                                    action:'delImg'
+                                },
+                                success:function(dados){
+                                    console.log(dados);
+                                    obj.parent("div").remove();
+                                }
+                            });
+                        },
+                        'Não':function(){
+                            
+                        }
                     }
-                });
+                })
+
             })
 
             if (window.File && window.FileList && window.FileReader) {
