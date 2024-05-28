@@ -3,7 +3,7 @@
 
     if ($_POST['action'] == 'delImg') {
 
-        if(!is_file("../volume/products/{$_POST['id']}/{$_POST['img']}")) unlink("../volume/products/{$_POST['id']}/{$_POST['img']}");
+        if(is_file("../volume/products/{$_POST['id']}/{$_POST['img']}")) unlink("../volume/products/{$_POST['id']}/{$_POST['img']}");
         exit();
 
     }
