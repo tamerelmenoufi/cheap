@@ -14,7 +14,6 @@
 
     // $_SESSION = [];
 
-
      if($_POST['historico']){
          $pagina = str_replace("/app/", false, $_SERVER["PHP_SELF"]);
          $destino = $_POST['historico'];
