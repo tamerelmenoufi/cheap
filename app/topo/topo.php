@@ -59,6 +59,7 @@ $d = mysqli_fetch_object($result);
                         type:"POST",
                         data,
                         success:function(retorno){
+                            console.log(retorno)
                             $(`${dados.tg}`).html(retorno);
                             Carregando('none');
                         }
