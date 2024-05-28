@@ -20,7 +20,7 @@ include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
         padding-right:20px;
         border-radius:20px;
         background-color:#b60710;
-        left:2px;
+        left:50px;
         right:5px;
         top:0;
         bottom:5px;
