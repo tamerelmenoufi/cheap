@@ -78,11 +78,15 @@
                     <input type="text" class="form-control" id="description" name="description" placeholder="<?=$Dic['Description']?>" value="<?=$d->description?>">
                     <label for="description"><?=$Dic['Description']?>*</label>
                 </div>
-
+                <?php
+                if($d->id){
+                ?>
                 <input type="file" class="form-control" placeholder="Icon">
                 <div class="form-text mb-3"><?=$Dic['Select an image to include in the gallery']?></div>
                 <div id="divImages"></div>
-
+                <?php
+                }
+                ?>
                 <div class="form-floating mb-3">
                     <input type="datetime-local" name="start_date" id="start_date" class="form-control" placeholder="<?=$Dic['Start Date']?>" value="<?=($d->start_date)?>">
                     <label for="start_date"><?=$Dic['Start Date']?>*</label>
