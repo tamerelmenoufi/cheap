@@ -26,6 +26,16 @@
         font-family:FlameBold;
     }
 
+    .foto{
+        cursor:pointer;
+        border:solid 1px #eee;
+        border-radius:7px;
+        height:100%;
+        width:100%;
+    }
+    .foto:hover{
+        border:solid 1px #ccc;
+    }
 
     .home_corpo{
         position: absolute;
@@ -96,7 +106,7 @@
                     if($p == 5){
         ?>
             <div class="col-<?=$c?>">
-                <div class="m-3 foto"  style="height:100%;">
+                <div class="foto">
                     <div 
                         class="d-flex justify-content-center align-items-center" 
                         style="height:100%; border-radius:5px; background-color:#eee"
@@ -111,7 +121,7 @@
                     }else{
         ?>
             <div class="col-<?=$c?>">
-                <div class="m-3">
+                <div class="mb-1">
                     <img 
                         src="<?=$localPainel?>src/volume/products/<?="{$d->id}/{$arquivo}"?>" 
                         class="img-fluid foto" 
