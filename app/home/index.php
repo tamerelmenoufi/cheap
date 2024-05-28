@@ -128,7 +128,7 @@
                     <div 
                         class="d-flex justify-content-center align-items-center" 
                         style="height:100%; border-radius:5px; background-color:#eee"
-                        registro=""
+                        registro="<?=$d->id?>"
                         imagem=""
                     >
                         <h1>+ <?=($n - 5)?></h1>
