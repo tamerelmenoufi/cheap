@@ -55,7 +55,9 @@
 <div class="home_corpo">
 
 <?php
-    $query = "select a.*, (select id from favorite where product = a.id and customer = (select id from customers where device = '{$_SESSION['idUnico']}')) as opclike from products a";
+    //$query = "select a.*, (select id from favorite where product = a.id and customer = (select id from customers where device = '{$_SESSION['idUnico']}')) as opclike from products a";
+    $query = "select a.*, (select id from favorite where product = a.id and customer = (select id from customers where device = '{$_SESSION['idUnico']}')) as opclike from products a where a.id in (select product from favorite where customer = (select id from customers where device = '{$_SESSION['idUnico']}'))";
+    
     $result = mysqli_query($con, $query);
     while($d = mysqli_fetch_object($result)){
 ?>
