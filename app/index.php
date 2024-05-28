@@ -23,7 +23,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="img/icone.png">
-    <title>BK - Manaus</title>
+    <meta name="theme-color" content="#ffc63a"/>
+    <title>CHEAP</title>
     <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/header.php");
     ?>
