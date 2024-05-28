@@ -60,22 +60,22 @@
         </div>
         <div class="row mb-1">
             <div class="col">
-                <i class="fa-brands fa-whatsapp"></i> <a href="https://api.whatsapp.com/send?phone=5592986123301" target="_blank">+55 92 986123301</a>
+                <i class="fa-brands fa-whatsapp"></i> <a href="https://api.whatsapp.com/send?phone=+201116680996" target="_blank">+2 0111668-0996</a>
             </div>
         </div>
         <div class="row mb-1">
             <div class="col">
-                <i class="fa-solid fa-at"></i> <a href="mailto:atendimento@bkmanaus.com.br" target="_blank">atendimento@bkmanaus.com.br</a>
+                <i class="fa-solid fa-at"></i> <a href="mailto:cheat@mohatron.com" target="_blank">cheat@mohatron.com</a>
             </div>
         </div>
         <div class="row mb-1">
             <div class="col">
-                <i class="fa-solid fa-house"></i> <a href="https://bkmanaus.com.br" target="_blank">https://bkmanaus.com.br</a>
+                <i class="fa-solid fa-house"></i> <a href="http://mohatron.com/cheat/" target="_blank">http://mohatron.com/cheat/</a>
             </div>
         </div>
         <div class="row mb-1">
             <div class="col">
-                <span style="color:#a1a1a1">Aplicativo atende pedidos todos os dias das 11h às 23h.</span>
+                <span style="color:#a1a1a1">Aplicativo desenvolvido pela Mohatron Soluções em Sistema da Informação - <?date("Y")?></span>
             </div>
         </div>
     </div>
