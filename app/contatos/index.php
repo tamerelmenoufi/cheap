@@ -51,8 +51,34 @@
 </div>
 
 
-<div class="home_corpo">
-    Contatos
+<div class="home_corpo p-2">
+    <div class="container">
+        <div class="row mb-3">
+            <div class="col">
+                Para dúvidas, sugestões ou reclamações, entre em contato conosco utilizando um dos contatos a seguinte.
+            </div>
+        </div>
+        <div class="row mb-1">
+            <div class="col">
+                <i class="fa-brands fa-whatsapp"></i> <a href="https://api.whatsapp.com/send?phone=5592986123301" target="_blank">+55 92 986123301</a>
+            </div>
+        </div>
+        <div class="row mb-1">
+            <div class="col">
+                <i class="fa-solid fa-at"></i> <a href="mailto:atendimento@bkmanaus.com.br" target="_blank">atendimento@bkmanaus.com.br</a>
+            </div>
+        </div>
+        <div class="row mb-1">
+            <div class="col">
+                <i class="fa-solid fa-house"></i> <a href="https://bkmanaus.com.br" target="_blank">https://bkmanaus.com.br</a>
+            </div>
+        </div>
+        <div class="row mb-1">
+            <div class="col">
+                <span style="color:#a1a1a1">Aplicativo atende pedidos todos os dias das 11h às 23h.</span>
+            </div>
+        </div>
+    </div>
 </div>   
 <div class="home_rodape"></div>
 
