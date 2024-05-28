@@ -51,14 +51,9 @@
     <h2>Perfil</h2>
 </div>
 
-
 <div class="home_corpo">
     <div style="padding:3; text-align:center; color:#a1a1a1; font-size:12px;">ID: <?=$_SESSION['idUnico']?></div>
     <div class="dados_pessoais"></div>
-    <div class="dados_enderecos"></div>
-    <div class="m-2">
-        <button type="button" class="btn btn-outline-danger w-100 desconectar">Desconectar</button>
-    </div>
 </div>   
 <div class="home_rodape"></div>
 
@@ -96,32 +91,7 @@ $(function(){
         success:function(dados){
             $(".dados_pessoais").html(dados);
         }
-    });    
-
-    $(".desconectar").click(function(){
-        $.confirm({
-            title:"Desconcetar",
-            type:"red",
-            content:"Deseja realmente desconectar do Aplicativo?",
-            buttons:{
-                confirm:{
-                    text:"Sim",
-                    btnClass:'btn-danger',
-                    action:function(){
-                        window.location.href='./?s=1';
-                    }
-                },
-                cancel:{
-                    text:'Não',
-                    btnClass:'btn-warning',
-                    action:function(){
-
-                    }
-                }
-            },
-            columnClass:'col-12'
-        })
-    })
+    });
 
 })
 
