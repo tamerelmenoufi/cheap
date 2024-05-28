@@ -79,6 +79,11 @@ $pdAtiva = $_SESSION['historico'][$i]['local'];
     <div class="d-flex justify-content-between align-items-center rodape_area">
         <img home src="img/logo.png?n" />
 
+        <div navegacao="home/index.php" class="telaPedido">
+            <i class="fa-solid fa-home" <?=(($pdAtiva == 'home/index.php')?'style="color:#ffdb37;"':false)?>></i>
+            <p <?=(($pdAtiva == 'home/index.php')?'style="color:#ffdb37;"':false)?>>Home</p>
+        </div>
+
         <div navegacao="usuarios/perfil.php" class="telaPedido">
             <i class="fa-solid fa-user" <?=(($pdAtiva == 'usuarios/perfil.php')?'style="color:#ffdb37;"':false)?>></i>
             <p <?=(($pdAtiva == 'usuarios/perfil.php')?'style="color:#ffdb37;"':false)?>>Perfil</p>
