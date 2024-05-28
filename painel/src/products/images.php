@@ -35,7 +35,7 @@
             ?>
                 <div class="col-md-4" style="position:relative">
                     <i class="fa fa-trash text-danger" delImg="<?=$arquivo?>" style="position:absolute; right:15px; bottom:35px; z-index:1; cursor: pointer;" ></i>
-                    <img src="src/volume/products/<?="{$_POST['id']}/{$arquivo}"?>" class="img-fluid">
+                    <img src="src/volume/products/<?="{$_POST['id']}/{$arquivo}"?>" class="img-fluid mb-1">
                 </div>
             <?php
                     }
