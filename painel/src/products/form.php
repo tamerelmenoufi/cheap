@@ -75,7 +75,7 @@
                 </div>
 
                 <div class="form-floating mb-3">
-                    <textarea class="form-control" id="description" name="description" placeholder="<?=$Dic['Description']?>" style="height:150px;"><?=$d->description?>"</textarea>
+                    <textarea class="form-control" id="description" name="description" placeholder="<?=$Dic['Description']?>" style="height:150px;"><?=$d->description?></textarea>
                     <label for="description"><?=$Dic['Description']?>*</label>
                 </div>
                 <?php
