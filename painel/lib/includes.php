@@ -29,8 +29,8 @@
 
     include("dicionary_".(($_SESSION['lng'])?$_SESSION['lng']:'en').".php");
 
-    $localPainel = $_SERVER["REQUEST_SCHEME"]."://cheappanel.mohatron.com/";
-    $localSite = $_SERVER["REQUEST_SCHEME"]."://cheap.mohatron.com/";
+    $localPainel = "https://cheappanel.mohatron.com/";
+    $localSite = "https://cheap.mohatron.com/";
 
     if($_GET['ln']){
         $_SESSION['lng'] = $_GET['ln'];
