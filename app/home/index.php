@@ -46,12 +46,12 @@
         flex-direction: column;
         width:100%;
         top:120px;
-        height:30px;
+        height:45px;
         border:solid 1px red;
     }
     .home_corpo{
         position: absolute;
-        top:155px;
+        top:170px;
         bottom:80px;
         overflow:auto;
         background-color:#fff;
