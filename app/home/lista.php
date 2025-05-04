@@ -56,7 +56,7 @@
 </style>
 
 <?php
-    $query = "select a.*, b.category as category_name, (select id from favorite where product = a.id and customer = (select id from customers where device = '{$_SESSION['idUnico']}')) as opclike from products a left join categories b on a.category = b.id {$where}";
+    echo $query = "select a.*, b.category as category_name, (select id from favorite where product = a.id and customer = (select id from customers where device = '{$_SESSION['idUnico']}')) as opclike from products a left join categories b on a.category = b.id {$where}";
     $result = mysqli_query($con, $query);
     while($d = mysqli_fetch_object($result)){
 ?>
