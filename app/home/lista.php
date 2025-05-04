@@ -29,7 +29,7 @@
     }
 
     if($_SESSION['campoBusca']){
-        $where = " b.category like '%{_SESSION['campoBusca']}%' or a.nome like '%{_SESSION['campoBusca']}%' ";
+        $where = " b.category like '%{$_SESSION['campoBusca']}%' or a.nome like '%{$_SESSION['campoBusca']}%' ";
     }
 
 
