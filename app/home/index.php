@@ -47,6 +47,8 @@
         width:100%;
         top:120px;
         height:45px;
+        padding-left:10px;
+        padding-right:10px;
         border:solid 1px red;
     }
     .home_corpo{
