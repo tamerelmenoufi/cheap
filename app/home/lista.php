@@ -45,13 +45,14 @@
 </style>
 
 <?php
-    $query = "select a.*, (select id from favorite where product = a.id and customer = (select id from customers where device = '{$_SESSION['idUnico']}')) as opclike from products a";
+    $query = "select a.*, b.category as category_name, (select id from favorite where product = a.id and customer = (select id from customers where device = '{$_SESSION['idUnico']}')) as opclike from products a left join categories b on a.category = b.id";
     $result = mysqli_query($con, $query);
     while($d = mysqli_fetch_object($result)){
 ?>
     <div class="card m-3 mb-0">
     <div class="card-body">
         <h5 class="card-title"><?=$d->name?></h5>
+        <span style="color:#a1a1a1"><?=$d->category_name?></span>
     </div>
 
     <div class="row mb-3">
