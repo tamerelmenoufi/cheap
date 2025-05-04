@@ -7,21 +7,6 @@
         $_SESSION['idUnico'] = $_POST['idUnico'];
     }
 
-    if($_POST['acao'] == 'regular'){
-        $query = "insert into favorite set product = '{$_POST['favorite']}', customer = (select id from customers where device = '{$_SESSION['idUnico']}')";
-        mysqli_query($con, $query);
-        echo 'solid';
-        exit();
-    }
-
-    if($_POST['acao'] == 'solid'){
-        $query = "delete from favorite where product = '{$_POST['favorite']}' and customer = (select id from customers where device = '{$_SESSION['idUnico']}')";
-        mysqli_query($con, $query);
-        echo 'regular';
-        exit();
-    }
-
-
 ?>
 <style>
     .barra_topo{
@@ -49,7 +34,6 @@
         height:45px;
         padding-left:10px;
         padding-right:10px;
-        border:solid 1px red;
     }
     .home_corpo{
         position: absolute;

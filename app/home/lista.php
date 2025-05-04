@@ -172,7 +172,7 @@ $(function(){
         idUnico = localStorage.getItem("idUnico");
         acao = $(this).attr("acao");
         $.ajax({
-            url:`home/index.php`,
+            url:`home/lista.php`,
             type:"POST",
             data:{
                 favorite,
