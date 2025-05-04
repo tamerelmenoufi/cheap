@@ -51,7 +51,7 @@
     }
     .home_corpo{
         position: absolute;
-        top:135px;
+        top:155px;
         bottom:80px;
         overflow:auto;
         background-color:#fff;
