@@ -39,6 +39,16 @@
         border-bottom-left-radius:40px;
         font-family:FlameBold;
     }
+    .barraBusca{
+        position:fixed;
+        justify-content: flex-end;
+        align-items: center;
+        flex-direction: column;
+        width:100%;
+        top:120px;
+        height:30px;
+        border:solid 1px red;
+    }
     .home_corpo{
         position: absolute;
         top:100px;
@@ -77,12 +87,18 @@
     i[favorito]:hover{
         font-size:16px;
     }
+
 </style>
 <div class="barra_topo">
     <h2>Promoções</h2>
 </div>
 <div class="home_corpo">
     
+
+<div class="barraBusca">
+
+</div>
+
 
 <?php
     $query = "select a.*, (select id from favorite where product = a.id and customer = (select id from customers where device = '{$_SESSION['idUnico']}')) as opclike from products a";
