@@ -40,7 +40,7 @@
         font-family:FlameBold;
     }
     .barraBusca{
-        position:fixed;
+        position:flex;
         justify-content: flex-end;
         align-items: center;
         flex-direction: column;
@@ -51,7 +51,7 @@
     }
     .home_corpo{
         position: absolute;
-        top:100px;
+        top:135px;
         bottom:80px;
         overflow:auto;
         background-color:#fff;
