@@ -24,6 +24,9 @@
     if($_POST['busca']){
         $_SESSION['campoBusca'] = $_POST['busca'];
     }
+    if($_POST['acao'] == 'limpar'){
+        $_SESSION['campoBusca'] = false;
+    }
 
     if($_SESSION['campoBusca']){
         $where = " b.category like '%{_SESSION['campoBusca']}%' or a.nome like '%{_SESSION['campoBusca']}%' ";

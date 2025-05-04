@@ -81,8 +81,9 @@
 
 <div class="barraBusca">
     <div class="input-group mb-3">
-        <input type="text" id="campoBusca" class="form-control" placeholder="اكتب بحثك هنا" aria-label="اكتب بحثك هنا" aria-describedby="button-addon2">
+        <input type="text" id="campoBusca" value="<?=$_SESSION['campoBusca']?>" class="form-control" placeholder="اكتب بحثك هنا" aria-label="اكتب بحثك هنا" aria-describedby="button-addon2">
         <button class="btn btn-outline-secondary" type="button" id="botaoBusca"><i class="fa-solid fa-magnifying-glass"></i></button>
+        <button class="btn btn-outline-danger" type="button" id="limparBusca"><i class="fa-solid fa-xmark"></i></button>
     </div>
 </div>
 
@@ -107,6 +108,20 @@ $(function(){
             type:"POST",
             data:{
                 busca
+            },
+            success:function(dados){
+                $(".home_corpo").html(dados);
+            }
+        });        
+    })
+
+    $("#limparBusca").click(function(){
+        $("#campoBusca").val('');
+        $.ajax({
+            url:"home/lista.php",
+            type:"POST",
+            data:{
+                acao:'limpar'
             },
             success:function(dados){
                 $(".home_corpo").html(dados);
