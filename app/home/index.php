@@ -81,8 +81,8 @@
 
 <div class="barraBusca">
     <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
-        <button class="btn btn-outline-secondary" type="button" id="button-addon2"><i class="fa-solid fa-magnifying-glass"></i></button>
+        <input type="text" id="campoBusca" class="form-control" placeholder="اكتب بحثك هنا" aria-label="اكتب بحثك هنا" aria-describedby="button-addon2">
+        <button class="btn btn-outline-secondary" type="button" id="botaoBusca"><i class="fa-solid fa-magnifying-glass"></i></button>
     </div>
 </div>
 
@@ -99,6 +99,20 @@ $(function(){
             $(".home_corpo").html(dados);
         }
     });
+
+    $("#botaoBusca").click(function(){
+        busca = $("#campoBusca").val();
+        $.ajax({
+            url:"home/lista.php",
+            type:"POST",
+            data:{
+                busca
+            },
+            success:function(dados){
+                $(".home_corpo").html(dados);
+            }
+        });        
+    })
 
 
 })
