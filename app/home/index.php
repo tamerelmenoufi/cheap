@@ -40,7 +40,7 @@
         font-family:FlameBold;
     }
     .barraBusca{
-        position:flex;
+        position:absolute;
         justify-content: flex-end;
         align-items: center;
         flex-direction: column;
@@ -92,12 +92,14 @@
 <div class="barra_topo">
     <h2>Promoções</h2>
 </div>
-<div class="home_corpo">
-    
 
 <div class="barraBusca">
 
 </div>
+
+<div class="home_corpo">
+    
+
 
 
 <?php
